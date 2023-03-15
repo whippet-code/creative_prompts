@@ -2,7 +2,6 @@
 
 ## Photo Mooch - Creative Prompts
 
-### Full Stack (MERN) Web App
 
 ## Software Requirements Documentation
 
