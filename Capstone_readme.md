@@ -9,7 +9,6 @@
 <p align="center">
   <img src="https://d1fdloi71mui9q.cloudfront.net/EnURNTC2TbygUnaBqDzl_Ar7B1A0BMyJ21bnD">
 </p>
-![PhotoMooch Logo](https://d1fdloi71mui9q.cloudfront.net/EnURNTC2TbygUnaBqDzl_Ar7B1A0BMyJ21bnD)
 
 ### Project Overview
 
