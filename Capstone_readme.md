@@ -2,9 +2,7 @@
 
 ## Photo Mooch - Creative Prompts
 
-### Full Stack (MERN) Web App
-
-## Software Requirements Documentation
+### Software Requirements Documentation
 
 <p align="center">
   <img src="https://d1fdloi71mui9q.cloudfront.net/EnURNTC2TbygUnaBqDzl_Ar7B1A0BMyJ21bnD">
@@ -20,7 +18,7 @@ An admin level of user will be able to add new prompts to the database, along wi
 
 The app will be a single page app with a front end built using React. The database will be hosted on MongoDB Atlas and interaction between the front and back end will be handled via express.js. The app will be built using the MERN stack. This will allow for a fast and responsive app that will be easy to maintain and update. Along with this the MERN stack is a popular and well supported stack that will allow for future enhancement and collaboration with other developers.
 Upon build the app will be deployed to Heroku for users.
-Syling will be handled using CSS and tailwind.css, this will allow for a responsive and easy to maintain design. Whilst also allowing for a clean and modern look to be created in minimal time.
+Syling will be handled using CSS and tailwind.css, this will allow for a responsive and easy to maintain design. Whilst also allowing for a clean and modern look to be created in minimal time. The app will have a mobile first design, this will allow for the app to be used on all devices. This will also allow for the app to be used on the go, allowing for the user to get a prompt at any time.
 To manage the app and the database a MongoDB Atlas cluster will be used. This will allow for the app to be hosted on Heroku and the database to be hosted on MongoDB Atlas. The express.js server will be used to handle the interaction between the front and back end, along with using extra helper libraries such as JSONWebToken, bcrypt and mongoose, to handle the authentication, encryption and user management.
 To aid the development process the app will be built using the agile methodology. Building section by section, will allow for the app to be built in a way that is easy to maintain and update. This will also allow for the app to be built in a way that is easy to add new features to in the future.
 
