@@ -11,8 +11,9 @@
 ### Project Overview
 
 Photo Mooch is a web app that provides creative prompts for artists & photographers. The app will be a single page app that will display a random prompt, associated image and extra info.
-Registered users will be able to click a button to get a new prompt plus they will be able to set filters to control the type of prompt recieved. The user will also be able to save the prompt and mark the prompt as complete. The user will be able to view all of the completed and saved prompts personal to their account.
-An admin level of user will be able to add new prompts to the database, along with editing and deleting existing prompts.
+Registered users will be able to click a button to get a new prompt plus they will be able to set filters to control the type of prompt recieved. The user will also be able to save the prompt and mark the prompt as complete. The user will be able to view all of the completed and saved prompts personal to their account. Completed prompts will not be shown to the user again when generating a prompt to show.
+An admin level of user will be able to add new prompts to the database, along with editing and deleting existing prompts. The admin level user will also be able to see all of the prompts in the database, and how many users have completed each prompt.
+The unregistered user will be able to get a random prompt, but will not be able to save or mark the prompt as complete. The user will also not be able to set filters to control the type of prompt recieved.
 
 ### System Architecture
 
@@ -50,7 +51,7 @@ Jamal - A photographer who is looking for a way to keep track of the prompts tha
   - Prompt Title
   - Prompt Prompt
   - Prompt Image
-  - Prompt Pillar // Pillar of wellbeing that the prompt belongs to. (Notice, Give, Explore, Learn, Connect)
+  - Prompt Category // Category of wellbeing that the prompt belongs to. (Notice, Give, Explore, Learn, Connect)
   - Prompt Tags [] // Array of tags that can be used to filter prompts
   - Prompt Author
   - Prompt Completed_by [] // User ID of users who have completed the prompt. Used to track how many users have completed the prompt.
@@ -110,6 +111,7 @@ Jamal - A photographer who is looking for a way to keep track of the prompts tha
   - CSS
 
 - Logos, images and prompt data sourced from photo mooch. Follow brand font and colour guidelines.
+- Consistent colour scheme and styling throughout the app.
 - Mobile first design.
 
 #### Non-Functional Requirements
