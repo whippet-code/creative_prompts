@@ -2,7 +2,7 @@
 
 ## Photo Mooch - Creative Prompts
 
-## Software Requirements Documentation
+### Software Requirements Documentation
 
 <p align="center">
   <img src="https://d1fdloi71mui9q.cloudfront.net/EnURNTC2TbygUnaBqDzl_Ar7B1A0BMyJ21bnD">
