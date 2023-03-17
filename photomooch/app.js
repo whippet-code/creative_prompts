@@ -3,8 +3,11 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-// set up cors
+// set up cors for cross origin requests
 var cors = require("cors");
+
+// set up mongoose
+var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -25,8 +28,19 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/prompts", promptsRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+const start = async () => {
+  try {
+    await mongoose.connect(
+      "mongodb+srv://mark:Password@hyperiondevtask.qkcy9dp.mongodb.net/?retryWrites=true&w=majority"
+    );
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+start();
 
 module.exports = app;
