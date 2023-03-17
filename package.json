@@ -1,0 +1,30 @@
+{
+  "name": "photo_mooch",
+  "version": "1.0.0",
+  "description": "Creative prompt web app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon app.js"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "mongodb",
+    "jwt",
+    "webapp",
+    "fullstack"
+  ],
+  "author": "M. Ivkovic",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
