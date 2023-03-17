@@ -28,10 +28,12 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/prompts", promptsRouter);
 
+// link mongodb using mongoose and use the photomooch database
+
 const start = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://mark:Password@hyperiondevtask.qkcy9dp.mongodb.net/?retryWrites=true&w=majority"
+      "mongodb+srv://mark:Password@hyperiondevtask.qkcy9dp.mongodb.net/photomooch?retryWrites=true&w=majority"
     );
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);

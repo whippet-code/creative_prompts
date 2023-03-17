@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "title": "Lost & Found",
+    "prompt": "Photograph those lost & discarded items that youfind on your daily walks.",
+    "image": "https://images.pexels.com/photos/3735202/pexels-photo-3735202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "category": "Take Notice",
+    "tags": [
+      "outdoors",
+      "solo",
+      "quick"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Attitude of Gratitude",
+    "prompt": "Try a week or two of photographing one thing each day that you are grateful for.",
+    "image": "https://images.pexels.com/photos/2086748/pexels-photo-2086748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "category": "give",
+    "tags": [
+      "solo",
+      "long"
+    ]
+  }
+]
