@@ -8,6 +8,7 @@ var cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const promptsRouter = require("./routes/prompts");
 
 var app = express();
 // set up PORT
@@ -22,6 +23,7 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/prompts", promptsRouter);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
