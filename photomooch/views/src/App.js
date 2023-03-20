@@ -1,8 +1,11 @@
+//import bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import "./App.css";
 import { useState, useEffect } from "react";
 
 //import components
-import Prompt from "./components/Prompt";
+import PromptHolder from "./components/Prompt";
 
 function App() {
   const [prompts, setPrompts] = useState([]);
@@ -16,9 +19,8 @@ function App() {
   return (
     <div className="App">
       <h1>Photomooch</h1>
-      {prompts.map((prompt) => (
-        <Prompt key={new Date()} {...prompt} />
-      ))}
+      <PromptHolder {...prompts} />
+      <h3>Stuff</h3>
     </div>
   );
 }
