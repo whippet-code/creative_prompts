@@ -15,3 +15,6 @@ Build as stand alone app?????
 // BUILD NOTES, TODOS
 tidy prompt holder nad filters bit. does filter need it's own component? just put with pressfor prompt?
 state and setters need passing properly.
+// Wed build
+Sort about notes.
+Add more prompts.
