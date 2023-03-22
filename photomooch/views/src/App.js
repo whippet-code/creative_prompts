@@ -1,11 +1,11 @@
-//import bootstrap
+//import bootstrap & CSS
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./App.css";
+
 import { useState, useEffect } from "react";
 
 //import components
-import PromptHolder from "./components/Prompt";
+import PromptHolder from "./components/PromptHolder";
 
 function App() {
   const [prompts, setPrompts] = useState([]);

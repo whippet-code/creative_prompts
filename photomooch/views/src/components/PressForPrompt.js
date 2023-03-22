@@ -8,13 +8,14 @@ import React, { useState } from "react";
 // import components
 import Prompt from "./Prompt";
 
-// props from prompt holder component are the prompts array and filter settings
+// props from prompt holder component are the prompts array and filter settings,
 const PressForPrompt = (props) => {
   // set state for prompt
   const [prompt, setPrompt] = useState({
-    category: "",
     title: "",
-    description: "",
+    prompt: "",
+    image: "",
+    category: "",
   });
 
   // handle click of press for prompt button
