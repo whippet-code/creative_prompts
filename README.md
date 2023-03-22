@@ -15,6 +15,7 @@ Build as stand alone app?????
 // BUILD NOTES, TODOS
 
 // Wed build
+build serverside prompt adding
 Add more prompts.
 Plan out admin dashboard
 design out the prompt cards comp.

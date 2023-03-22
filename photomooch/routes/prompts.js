@@ -9,4 +9,11 @@ router.get("/", async (req, res) => {
   res.json(prompts);
 });
 
+// Add a prompt to the database via POST request and use req body JSON object // NEEDS JWT AUTH FOR ADMIN ONLY
+router.post("/", async (req, res) => {
+  const prompt = new Prompt({ ...req.body });
+  insertedPrompt = await prompt.save();
+  res.json(insertedPrompt);
+});
+
 module.exports = router;
