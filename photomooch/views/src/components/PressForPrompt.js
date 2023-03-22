@@ -8,7 +8,7 @@ import React, { useState } from "react";
 // import components
 import Prompt from "./Prompt";
 
-// props from prompt holder component are the prompts array and filter settings,
+// props from prompt holder component are the prompts array "prompts" and filter settings "filter"
 const PressForPrompt = (props) => {
   // set state for prompt
   const [prompt, setPrompt] = useState({
@@ -20,23 +20,27 @@ const PressForPrompt = (props) => {
 
   // handle click of press for prompt button
   const handleClick = (e) => {
-    // if filter array isn't empty, set filteredPrompts array to prompts array only is prompt has the same tags as filter
-    const filteredPrompts = props.prompts.filter((prompt) => {
-      if (props.filter.length !== 0) {
-        for (let i = 0; i < props.filter.length; i++) {
-          if (prompt.tags.includes(props.filter[i])) {
-            return true;
-          }
+    if (props.filter.length === 0) {
+      // if no filter settings are selected
+      // set prompt state to a random prompt from the prompts array
+      setPrompt(
+        props.prompts[Math.floor(Math.random() * props.prompts.length)]
+      );
+    } else {
+      while (true) {
+        //generate ranodom prompt from prompts array
+        let randomPrompt =
+          props.prompts[Math.floor(Math.random() * props.prompts.length)];
+        // now itterate through the filter array
+        // verify if randomPrompt.tags includes filter all filter array items
+        // if it does set prompt state to randomPrompt
+        // if it does not repeat the while loop
+        if (props.filter.every((item) => randomPrompt.tags.includes(item))) {
+          setPrompt(randomPrompt);
+          break;
         }
-        return false;
-      } else {
-        return true;
       }
-    });
-    // using the filtered prompts array, set the prompt state to a random prompt from the array
-    setPrompt(
-      filteredPrompts[Math.floor(Math.random() * filteredPrompts.length)]
-    );
+    }
   };
 
   return (
