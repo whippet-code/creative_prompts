@@ -13,7 +13,8 @@ Later progression - Medium based usage (visual prompt, writing prompt, etc)
 Build as stand alone app?????
 
 // BUILD NOTES, TODOS
-tidy prompt holder and filters bit. does filter need it's own component? just put with pressforprompt comp?
-// Wed build
 
+// Wed build
 Add more prompts.
+Plan out admin dashboard
+design out the prompt cards comp.

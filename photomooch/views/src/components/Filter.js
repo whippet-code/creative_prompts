@@ -20,7 +20,14 @@ const Filter = (props) => {
 
   return (
     <>
-      <button onClick={() => setShow(true)}>Set Filter</button>
+      <button
+        onClick={() => {
+          setShow(true);
+          props.handleChange(null);
+        }}
+      >
+        Set Filter
+      </button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Filter Prompts</Modal.Title>

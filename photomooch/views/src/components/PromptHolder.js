@@ -16,7 +16,10 @@ const PromptHolder = (props) => {
 
   // handle change of filter settings
   const handleChange = (e) => {
-    setFilter((prev) => [...prev, e.target.value]);
+    if (e === null) setFilter([]);
+    else {
+      setFilter((prev) => [...prev, e.target.value]);
+    }
   };
 
   return (
