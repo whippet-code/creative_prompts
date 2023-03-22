@@ -1,9 +1,6 @@
 // prompt holder component
 // contains the pressforprompt component
 // and the filter modal component
-// accepts props from app.js of prompts array,
-// component has state for filter settings which are passed to the filter component which renders the filter modal.
-// the filter state and promtps state are passed to the pressforprompt component
 
 // import react components
 import React, { useState } from "react";

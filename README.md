@@ -14,7 +14,6 @@ Build as stand alone app?????
 
 // BUILD NOTES, TODOS
 tidy prompt holder and filters bit. does filter need it's own component? just put with pressforprompt comp?
-state and setters need passing properly.
 // Wed build
-Sort about notes.
+
 Add more prompts.

@@ -1,8 +1,6 @@
 // filter form componenet for selection prompts
-// componennt renders a modal with two toggle switches
-// first toggle has shorter, any and longer settings
-// second toggle has indoors, and and outdoors settings
-// component then passes the selected settings to the parent component
+// componennt renders a modal with two options for prompt length and location
+// component then passes the selected settings to the parent component via filter state.
 
 import React, { useState } from "react";
 import { Modal, Form } from "react-bootstrap"; // import bootstrap components
@@ -22,7 +20,7 @@ const Filter = (props) => {
 
   return (
     <>
-      <button onClick={() => setShow(true)}>Filter</button>
+      <button onClick={() => setShow(true)}>Set Filter</button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Filter Prompts</Modal.Title>
