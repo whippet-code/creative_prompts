@@ -20,7 +20,6 @@ function App() {
     <div className="App">
       <h1>Photomooch</h1>
       <PromptHolder prompts={prompts} />
-      <h3>Stuff</h3>
     </div>
   );
 }

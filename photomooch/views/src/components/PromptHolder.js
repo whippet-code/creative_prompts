@@ -24,7 +24,6 @@ const PromptHolder = (props) => {
 
   return (
     <div className="PromptHolder">
-      <h3>Prompt Holder</h3>
       <PressForPrompt prompts={props.prompts} filter={filter} />
       <Filter filter={filter} handleChange={handleChange} />
     </div>

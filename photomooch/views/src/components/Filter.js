@@ -3,7 +3,7 @@
 // component then passes the selected settings to the parent component via filter state.
 
 import React, { useState } from "react";
-import { Modal, Form } from "react-bootstrap"; // import bootstrap components
+import { Modal, Form, Button } from "react-bootstrap"; // import bootstrap components
 
 const Filter = (props) => {
   const [show, setShow] = useState(false);
@@ -19,15 +19,26 @@ const Filter = (props) => {
   };
 
   return (
-    <>
-      <button
-        onClick={() => {
-          setShow(true);
-          props.handleChange(null);
-        }}
-      >
-        Set Filter
-      </button>
+    <div className="filter">
+      {props.filter.length > 0 ? (
+        <button
+          onClick={() => {
+            setShow(true);
+            props.handleChange(null);
+          }}
+        >
+          Reset Filter
+        </button>
+      ) : (
+        <button
+          onClick={() => {
+            setShow(true);
+            props.handleChange(null);
+          }}
+        >
+          Set Filter
+        </button>
+      )}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Filter Prompts</Modal.Title>
@@ -51,9 +62,12 @@ const Filter = (props) => {
               </Form.Control>
             </Form.Group>
           </Form>
+          <Button variant="primary" onClick={handleClose}>
+            Set Filters
+          </Button>
         </Modal.Body>
       </Modal>
-    </>
+    </div>
   );
 };
 

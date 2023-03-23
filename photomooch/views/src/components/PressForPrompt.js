@@ -45,7 +45,6 @@ const PressForPrompt = (props) => {
 
   return (
     <div className="PressForPrompt">
-      <h4>Press for prompt</h4>
       <button onClick={handleClick}>Press for Prompt</button>
       <Prompt {...prompt} />
     </div>
