@@ -14,7 +14,11 @@ Build as stand alone app?????
 
 // BUILD NOTES, TODOS
 
-// Wed build
+// Thurs build
 
-Plan out admin dashboard
-design out the prompt cards comp.
+Plan / Build out admin dashboard
+Build out prompt card styles
+
+// Fri build
+
+Plan / enable JWT auth
