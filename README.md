@@ -13,6 +13,7 @@ Later progression - Medium based usage (visual prompt, writing prompt, etc)
 Build as stand alone app?????
 
 // BUILD NOTES, TODOS
+Press for prompt conditional????? (appearance wise, big if no prompt on screen then smaller for a reprompt)
 
 // Thurs build
 

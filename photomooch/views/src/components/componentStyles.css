@@ -8,12 +8,33 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
+  color: #fff;
+}
+
+.filter button {
+  background: rgb(21,255,243);
+  background: linear-gradient(133deg, rgba(21,255,243,1) 0%, rgba(215,99,99,1) 60%);
+  color: #fff;
+  width: 10rem;
+  height: 4rem;
+  border-radius: 3rem;
+  border: none;
+  font-family: "calder-script", sans-serif;
+  font-size: 2rem;
+  text-align: center;
 }
 
 /* PressForPrompt */
+
+.PressForPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  min-width: 50px;
+  min-height: 50px;
+}
 
 /* Prompt */
 
@@ -21,11 +42,61 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+  justify-content: space-around;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  width: 400px;
+  height: 80%;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 390px;
+  height: 600px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  border-radius: 3rem;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-color: #f5f5f5;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 2rem;
+  justify-content: space-between;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .card-holder {
@@ -39,53 +110,72 @@
   background-color: #f5f5f5;
 }
 
-.card-front {
+.flip-card-front, .flip-card-back {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
-}
-
-.card-back {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
+  justify-content: space-evenly;
+  padding: 1rem;
 }
 
 .card-title {
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 3rem;
   margin: 0;
   padding: 0;
+  font-family: "calder-script", sans-serif;
+  color: #fff;
+  background-color: transparent;
 }
 
 .card-category {
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 4rem;
   margin: 0;
   padding: 0;
+  color: #fff;
+  background-color: transparent;
 }
 
 .card-prompt {
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 2.5rem;
   margin: 0;
   padding: 0;
+  color: #fff;
+  background-color: transparent;
 }
 
 .card-image {
-  max-width: 50vw;
-  max-height: 50vh;
+  padding: 0.5rem;
+  max-width: 90%;
+  max-height: 66%;
+  aspect-ratio: original;
+  border: 2px solid #f5f5f5;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 
 /* PromptHolder */
+
+.PromptHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 90vh;
+}
+
+.moochButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  min-height: 50px;
+  margin: 0 auto;
+}
+
+.moochButton img {
+  max-height: 30vh;
+  max-width: 30vh;
+  aspect-ratio: 1/1;
+}
