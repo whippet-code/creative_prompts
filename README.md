@@ -15,11 +15,7 @@ Build as stand alone app?????
 // BUILD NOTES, TODOS
 Press for prompt conditional????? (appearance wise, big if no prompt on screen then smaller for a reprompt)
 
-// Thurs build
-
-Plan / Build out admin dashboard
-Build out prompt card styles
-
 // Fri build
 
-Plan / enable JWT auth
+Plan / Build admin page
+Plan / enable JWT auth / user log in
