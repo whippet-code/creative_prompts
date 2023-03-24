@@ -15,6 +15,8 @@ Build as stand alone app?????
 // BUILD NOTES, TODOS
 Press for prompt conditional????? (appearance wise, big if no prompt on screen then smaller for a reprompt)
 
+Prompt cards need save / completed buttons
+
 // Fri build
 
 Plan / Build admin page
