@@ -34,11 +34,42 @@ router.post("/login", async (req, res) => {
 
   // create jwt token
   const token = jwt.sign(
-    { _id: user._id, isAdmin: user.isAdmin, username: user.username }, 'jwtPrivateKey', { expiresIn: '12h' }
+    { _id: user._id, isAdmin: user.isAdmin, username: user.username },
+    "jwtPrivateKey",
+    { expiresIn: "12h" }
   );
 
   // send token to client
   res.send(token);
+});
+
+// register route
+router.post("/register", async (req, res) => {
+  const { error } = validateUser(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+
+  // get users from db
+  const users = await getUsers();
+
+  // check if user already exists
+  const user = users.find((u) => u.username === req.body.username);
+  if (user) return res.status(400).send("User already registered.");
+
+  // create new user
+  const newUser = new User({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+    isAdmin: false,
+    savedPrompts: [],
+    completedPrompts: [],
+  });
+
+  // add newUser to db, don't encypt password at this point (later builds)
+  await newUser.save();
+
+  // confirm
+  res.send("User registered. Please log in.");
 });
 
 module.exports = router;
