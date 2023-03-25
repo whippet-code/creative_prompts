@@ -23,3 +23,6 @@ Plan / build user acc page
 Plan / enable JWT auth / user log in
 Nav bar
 load/splash screen
+
+// POST SUBMIT TODOS
+use dovenv for api keys and other sensitive data
