@@ -18,6 +18,8 @@ Press for prompt conditional????? (appearance wise, big if no prompt on screen t
 Position of press for prompt and filter button, when prompt on screen.
 Prompt cards need save / completed buttons
 
+server routes???? what's needed
+
 Plan / Build admin page
 Plan / build user acc page
 Plan / enable JWT auth / user log in
