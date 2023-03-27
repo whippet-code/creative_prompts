@@ -27,42 +27,51 @@ const AddPrompt = () => {
     // send newPrompt to DB
     // verify form is completed
     if (
-      newPrompt.title !== "" ||
-      newPrompt.prompt !== "" ||
-      newPrompt.image !== "" ||
-      newPrompt.category !== ""
+      newPrompt.title === "" ||
+      newPrompt.prompt === "" ||
+      newPrompt.image === "" ||
+      newPrompt.category === ""
     ) {
       return alert(
         "Please ensure new prompt has a title, prompt, category and image link url"
       );
     }
+
     //make fetch call to server to add new prompt
-    fetch("http://localhost:8080", {
+    fetch("http://localhost:8080/prompts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        // token: ADD TOKEN HERE FROM LOCAL STORAGE
+        // token: ADD TOKEN HERE FROM LOCAL STORAGE WHEN auth & admin middlewear implemented
       },
-      body: JSON.stringify(newPrompt),
+      body: JSON.stringify({
+        title: newPrompt.title,
+        prompt: newPrompt.prompt,
+        image: newPrompt.image,
+        category: newPrompt.category,
+        tags: [],
+        author: newPrompt.author,
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.message);
+        console.log(data);
       })
       .catch((err) => {
         console.log(err);
       });
+
     // Clear inputs
     // create empty prompt obj
-    const emptyPrompt = {
-      title: "",
-      prompt: "",
-      image: "",
-      category: "",
-      author: "",
-    };
+    // const emptyPrompt = {
+    //   title: "",
+    //   prompt: "",
+    //   image: "",
+    //   category: "",
+    //   author: "",
+    // };
     // set newPrompt state to emptyState
-    setNewPrompt((prev) => emptyPrompt);
+    // setNewPrompt((prev) => emptyPrompt);
   };
 
   return (

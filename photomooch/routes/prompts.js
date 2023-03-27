@@ -10,19 +10,21 @@ router.get("/", async (req, res) => {
   res.send(prompts);
 });
 
-// Add a prompt to the database via POST request and use req body JSON object // NEEDS JWT AUTH to confirm user isAdmin
-// verify user is admin
-router.post("/", [auth, admin], async (req, res) => {
-  // create new prompt // does  newPrompt = new Prompt({...req.newPrompt}) work?
+// Add a prompt to the database via POST request and use req body JSON object
+// middlewear checks not implemented as yet. auth & admin
+router.post("/", async (req, res) => {
+  console.log(req.body);
+  // create new prompt // does  newPrompt = new Prompt({...req.body}) work?
   const newPrompt = new Prompt({
     title: req.body.title,
     prompt: req.body.prompt,
     image: req.body.image,
     category: req.body.category,
-    tags: req.body.tags,
+    tags: [],
     author: req.body.author,
+    completedBy: [],
   });
-
+  console.log("New Prompt - " + newPrompt);
   // save new prompt to db
   await newPrompt.save();
 

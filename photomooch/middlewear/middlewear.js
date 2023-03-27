@@ -1,5 +1,9 @@
 // helper functions and custom middlewear
 
+//import models
+const { User } = require("../models/user");
+const { Prompt } = require("../models/prompt");
+
 // import dependencies
 const jwt = require("jsonwebtoken");
 
