@@ -37,6 +37,17 @@ const AddPrompt = () => {
       );
     }
 
+    // verify category is valid
+    if (
+      newPrompt.category !== "Explore" &&
+      newPrompt.category !== "Learn" &&
+      newPrompt.category !== "Connect" &&
+      newPrompt.category !== "Take Notice" &&
+      newPrompt.category !== "Give"
+    ) {
+      return alert("Please ensure new prompt has a valid category");
+    }
+
     //make fetch call to server to add new prompt
     fetch("http://localhost:8080/prompts", {
       method: "POST",
@@ -55,23 +66,24 @@ const AddPrompt = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data.message);
       })
       .catch((err) => {
         console.log(err);
       });
 
-    // Clear inputs
-    // create empty prompt obj
-    // const emptyPrompt = {
-    //   title: "",
-    //   prompt: "",
-    //   image: "",
-    //   category: "",
-    //   author: "",
-    // };
-    // set newPrompt state to emptyState
-    // setNewPrompt((prev) => emptyPrompt);
+    // Clear modal form inputs
+    //create empty prompt obj
+    const emptyPrompt = {
+      title: "",
+      prompt: "",
+      image: "",
+      category: "",
+      author: "",
+    };
+    //set newPrompt state to emptyState
+    setNewPrompt((prev) => emptyPrompt);
+    handleClose();
   };
 
   return (
@@ -85,15 +97,30 @@ const AddPrompt = () => {
           <Form>
             <Form.Group className="mb-3" controlId="ControlTitle">
               <Form.Label>Title</Form.Label>
-              <Form.Control name="title" type="text" onChange={handleChange} />
+              <Form.Control
+                name="title"
+                type="text"
+                placeholder={newPrompt.title === "" ? "" : newPrompt.title}
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="ControlPrompt">
               <Form.Label>Prompt</Form.Label>
-              <Form.Control name="prompt" type="text" onChange={handleChange} />
+              <Form.Control
+                name="prompt"
+                type="text"
+                placeholder={newPrompt.prompt === "" ? "" : newPrompt.prompt}
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="ControlURL">
               <Form.Label>Image URL</Form.Label>
-              <Form.Control name="image" type="text" onChange={handleChange} />
+              <Form.Control
+                name="image"
+                type="text"
+                placeholder={newPrompt.image === "" ? "" : newPrompt.image}
+                onChange={handleChange}
+              />
             </Form.Group>
             {/* Needs to be a selection dropdown */}
             <Form.Group className="mb-3" controlId="ControlCategory">
@@ -101,12 +128,20 @@ const AddPrompt = () => {
               <Form.Control
                 name="category"
                 type="text"
+                placeholder={
+                  newPrompt.category === "" ? "" : newPrompt.category
+                }
                 onChange={handleChange}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="ControlAuthor">
               <Form.Label>Author</Form.Label>
-              <Form.Control name="author" type="text" onChange={handleChange} />
+              <Form.Control
+                name="author"
+                type="text"
+                placeholder={newPrompt.author === "" ? "" : newPrompt.author}
+                onChange={handleChange}
+              />
             </Form.Group>
             {/* // needs to be a selection list then build array from selected*/}
             {/* <Form.Group className="mb-3" controlId="ControlTags">
@@ -116,9 +151,6 @@ const AddPrompt = () => {
           </Form>
           <Button variant="primary" onClick={handleSubmit}>
             Add
-          </Button>
-          <Button varient="primary" onClick={handleClose}>
-            Done
           </Button>
         </Modal.Body>
       </Modal>

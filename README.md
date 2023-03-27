@@ -30,8 +30,13 @@ load/splash screen
 use dovenv for api keys and other sensitive data
 
 MONDAY 8th MARCH
-Add/Edit Prompt component
+Edit Prompt component
 admin dashboard - comp
 user dashboard - comp
 
------- AddPrompt comp has own state for prompt, should i put it in admin comp?? This would allow the same state to be used for edit prompt>> fills newPrompt with data from prompt to edit????????
+NOTES - When adding prompts, the DB is updated but prompts array in state is not updated. Need to add a useEffect to update the prompts array in state when the DB is updated. this will need the promtp fetch moving to it's own func.
+Also adding prompts tags is lazy/not implemented (just a string input), it need to be an array of strings.
+
+PROMPT HOLDER -
+HIDE press for prompot and filters when card on screen
+ADD close button to card to hide card and bring back press for prompt and filters.

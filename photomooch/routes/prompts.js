@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
 // Add a prompt to the database via POST request and use req body JSON object
 // middlewear checks not implemented as yet. auth & admin
 router.post("/", async (req, res) => {
-  console.log(req.body);
   // create new prompt // does  newPrompt = new Prompt({...req.body}) work?
   const newPrompt = new Prompt({
     title: req.body.title,
@@ -24,12 +23,12 @@ router.post("/", async (req, res) => {
     author: req.body.author,
     completedBy: [],
   });
-  console.log("New Prompt - " + newPrompt);
+
   // save new prompt to db
   await newPrompt.save();
 
   // confirm prompt was added to db
-  res.send(newPrompt);
+  res.json({ message: `New prompt added to DB - ${newPrompt.title}` });
 });
 
 module.exports = router;
