@@ -24,7 +24,7 @@ const PromptSchema = new mongoose.Schema({
   },
   tags: {
     type: Array,
-    required: true,
+    required: false,
   },
   completedBy: {
     type: Array,

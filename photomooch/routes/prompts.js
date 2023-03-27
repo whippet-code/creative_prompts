@@ -15,13 +15,14 @@ router.get("/", async (req, res) => {
 // Add a prompt to the database via POST request and use req body JSON object // NEEDS JWT AUTH to confirm user isAdmin
 // verify user is admin
 router.post("/", [auth, admin], async (req, res) => {
-  // create new prompt
+  // create new prompt // does  newPrompt = new Prompt({...req.newPrompt}) work?
   const newPrompt = new Prompt({
     title: req.body.title,
     prompt: req.body.prompt,
     image: req.body.image,
     category: req.body.category,
     tags: req.body.tags,
+    author: req.body.author,
   });
 
   // save new prompt to db
