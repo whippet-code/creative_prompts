@@ -28,3 +28,10 @@ load/splash screen
 
 // POST SUBMIT TODOS
 use dovenv for api keys and other sensitive data
+
+MONDAY 8th MARCH
+Add/Edit Prompt component
+admin dashboard - comp
+user dashboard - comp
+
+------ AddPrompt comp has own state for prompt, should i put it in admin comp?? This would allow the same state to be used for edit prompt>> fills newPrompt with data from prompt to edit????????
