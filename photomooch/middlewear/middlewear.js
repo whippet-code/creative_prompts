@@ -37,3 +37,11 @@ async function getPrompts() {
   const prompts = await Prompt.find();
   return prompts;
 }
+
+module.exports = {
+  getPrompts,
+  getUsers,
+  loggedIn,
+  admin,
+  auth,
+};

@@ -7,6 +7,9 @@ import { useState, useEffect } from "react";
 //import components
 import PromptHolder from "./components/PromptHolder";
 
+//test import
+import AddPrompt from "./components/AddPrompt";
+
 function App() {
   const [prompts, setPrompts] = useState([]);
 
@@ -19,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <PromptHolder prompts={prompts} />
+      <AddPrompt />
     </div>
   );
 }

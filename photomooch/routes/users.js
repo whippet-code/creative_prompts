@@ -3,16 +3,11 @@ var router = express.Router();
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const config = require("config");
-const Joi = require("joi");
 
 const { User } = require("../models/user");
 const { validateUser } = require("../models/user");
 
-const auth = require("../middlewear/auth");
-const admin = require("../middlewear/admin");
-const loggedIn = require("../middlewear/loggedIn");
-const { getUsers } = require("../middlewear/middlewear");
+const { getUsers, auth, admin, loggedIn } = require("../middlewear/middlewear");
 
 // log in route
 router.post("/login", async (req, res) => {
