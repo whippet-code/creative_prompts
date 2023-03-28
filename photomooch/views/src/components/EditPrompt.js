@@ -41,17 +41,39 @@ function EditPrompt(props) {
 
   return (
     <div>
-      <Modal
-        show={props.show}
-        onHide={props.handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
+      <Modal show={props.show} backdrop="static" keyboard={false}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Prompt</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
+            {/* THINK THIS SHOULD WORK, AND IT'S CLEANER */}
+            {/* {Object.entries(editPromptData).map(([key, value]) => {
+              return (
+                <Form.Group className="mb-3" controlId={`form${key}`}>
+                  <Form.Label>{key}</Form.Label>
+                  <Form.Control
+                    name={key}
+                    type="text"
+                    placeholder={`Enter ${key}`}
+                    onChange={handleChange}
+                    value={value}
+                  />
+                </Form.Group>
+              )}
+            )} */}
+
+            <Form.Group className="mb-3" controlId="formTitle">
+              <Form.Label>Title</Form.Label>
+              <Form.Control
+                name="title"
+                type="text"
+                placeholder="Enter title"
+                onChange={handleChange}
+                value={editPromptData.title}
+              />
+            </Form.Group>
+
             <Form.Group className="mb-3" controlId="formPrompt">
               <Form.Label>Prompt</Form.Label>
               <Form.Control
@@ -63,22 +85,53 @@ function EditPrompt(props) {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formDescription">
-              <Form.Label>Description</Form.Label>
+            <Form.Group className="mb-3" controlId="formImage">
+              <Form.Label>Image</Form.Label>
               <Form.Control
-                name="description"
-                type="text"
-                placeholder="Enter description"
+                name="image"
+                type="url"
+                placeholder="Enter image URL"
                 onChange={handleChange}
-                value={editPromptData.description}
+                value={editPromptData.image}
               />
             </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formCategory">
+              <Form.Label>Category</Form.Label>
+              <Form.Control
+                name="category"
+                type="text"
+                placeholder="Enter category"
+                onChange={handleChange}
+                value={editPromptData.category}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formAuthor">
+              <Form.Label>Author</Form.Label>
+              <Form.Control
+                name="author"
+                type="text"
+                placeholder="Enter author"
+                onChange={handleChange}
+                value={editPromptData.author}
+              />
+            </Form.Group>
+
+            {/* HELD BACK FOR NOW, IMPLEMENT STRING TO ARRAY */}
+            {/* <Form.Group className="mb-3" controlId="formTags">
+              <Form.Label>Tags</Form.Label>
+              <Form.Control
+                name="tags"
+                type="text"
+                placeholder="Enter tags"
+                onChange={handleChange}
+                value={editPromptData.tags}
+              />
+            </Form.Group> */}
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={props.handleClose}>
-            Close
-          </Button>
           <Button variant="primary" onClick={handleSubmit}>
             Save Changes
           </Button>
