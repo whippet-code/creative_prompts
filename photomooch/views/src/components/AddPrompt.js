@@ -86,6 +86,8 @@ const AddPrompt = () => {
     handleClose();
   };
 
+  // use .map to loop through newPrompt obj and create form inputs (Object.entrie(emptyPrompt).map(([key, value]) => {.....}))
+
   return (
     <div className="add-prompt">
       <button onClick={() => setShow(true)}>Add Prompt</button>

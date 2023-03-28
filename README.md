@@ -29,6 +29,7 @@ load/splash screen
 ### POST SUBMIT TODOS
 
 use dovenv for api keys and other sensitive data
+Tidy components folder to user / admin folders??
 
 ### Tuesday 28th March // Wednesday 29th March - Build
 
