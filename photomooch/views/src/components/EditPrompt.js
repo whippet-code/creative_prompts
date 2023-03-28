@@ -87,3 +87,5 @@ function EditPrompt(props) {
     </div>
   );
 }
+
+export default EditPrompt;
