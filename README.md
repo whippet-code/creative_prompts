@@ -26,20 +26,32 @@ Plan / enable JWT auth / user log in
 Nav bar
 load/splash screen
 
-// POST SUBMIT TODOS
+### POST SUBMIT TODOS
+
 use dovenv for api keys and other sensitive data
 
-Tuesday 28th March
-Edit Prompt component
+### Tuesday 28th March // Wednesday 29th March - Build
+
+Edit Prompt component X // set up submit
 admin dashboard - comp - Each prompt has edit & delete buttons
 admin / user acc prompt cards - title, prompt, (conditional edit/delete buttons admin/user)
 user dashboard - comp
-user login - comp // set up submit
-user register - comp //set up submit
+user login - comp X // set up submit
+user register - comp X //set up submit
 
-NOTES - When adding prompts, the DB is updated but prompts array in state is not updated. Need to add a useEffect to update the prompts array in state when the DB is updated. this will need the promtp fetch moving to it's own func.
+### server routes to add.
+
+edit prompt
+delete prompt
+login
+register
+
+## NOTES -
+
+When adding prompts, the DB is updated but prompts array in state is not updated. Need to add a useEffect to update the prompts array in state when the DB is updated. this will need the promtp fetch moving to it's own func.
 Also adding prompts tags is lazy/not implemented (just a string input), it need to be an array of strings.
 
-PROMPT HOLDER -
+#### PROMPT HOLDER -
+
 HIDE press for prompt and filters when card on screen
 ADD close button to card to hide card and bring back press for prompt and filters.
