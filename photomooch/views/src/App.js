@@ -7,8 +7,9 @@ import { useState, useEffect } from "react";
 //import components
 import PromptHolder from "./components/PromptHolder";
 
-//test import
+//test imports
 import AddPrompt from "./components/AddPrompt";
+import Register from "./components/Register";
 
 function App() {
   const [prompts, setPrompts] = useState([]);
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
       <PromptHolder prompts={prompts} />
       <AddPrompt />
+      <Register />
     </div>
   );
 }
