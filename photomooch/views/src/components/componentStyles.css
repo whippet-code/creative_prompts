@@ -187,7 +187,6 @@
 /* EditPrompt comp */
 .editButtons {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -206,22 +205,9 @@
   border: 2px solid #aaa;
   font-family: "calder-script", sans-serif;
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
 }
 
-.editbuttons button:hover {
-  background: rgb(21, 255, 243);
-  background: linear-gradient(
-    133deg,
-    rgba(21, 255, 243, 1) 0%,
-    rgba(215, 99, 99, 1) 60%
-  );
-  color: #fff;
-  width: 33%;
-  height: 3rem;
-  border-radius: 1rem;
-  border: 2px solid #aaa;
-  font-family: "calder-script", sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+.editButtons button:hover {
+  color: #000;
+  border: none;
 }

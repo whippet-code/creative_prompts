@@ -10,26 +10,39 @@ import { Card } from "react-bootstrap";
 
 import UserPrompt from "./UserPrompt";
 
-function UserDash() {
-  const [user, setUser] = useState({});
-  const [completedPrompts, setCompletedPrompts] = useState([]);
-  const [savedPrompts, setSavedPrompts] = useState([]);
+// passed full prompt list as props
+function UserDash(props) {
+  // user info pulled from JWT?
+  const [user, setUser] = useState({
+    username: "testUser",
+    email: "test@gmail.com",
+    completedPrompts: ["641b20e428b6e81cba48ea34", "641b24d528b6e81cba48ea38"],
+    savedPrompts: ["641b1edf28b6e81cba48ea2e", "641b1dba28b6e81cba48ea2a"],
+    isAdmin: false,
+  });
 
-  useEffect(() => {
-    fetch("http://localhost:8080/users", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setUser(data);
-        setCompletedPrompts(data.completedPrompts);
-        setSavedPrompts(data.savedPrompts);
-      });
-  }, []);
+  //USEEFFECT / STATE FOR SAVED & COMPLETE PROMPTS.
+
+  // useEffect(() => {
+  //   fetch("http://localhost:8080/users", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setUser(data);
+  //       setCompletedPrompts(data.completedPrompts);
+  //       setSavedPrompts(data.savedPrompts);
+  //     });
+  // }, []);
+
+  //func to get prompt data from prompt id
+  const getPromptById = (id) => {
+    return props.prompts.find((prompt) => prompt._id === id);
+  };
 
   return (
     <div>
@@ -42,25 +55,23 @@ function UserDash() {
 
       <div className="completedPrompts">
         <h2>Completed Prompts</h2>
-        {completedPrompts.map((prompt) => (
-          <UserPrompt
-            title={prompt.title}
-            prompt={prompt.prompt}
-            key={prompt._id}
-          />
-        ))}
+        {user.completedPrompts.map((id) => {
+          const promptData = getPromptById(id);
+          console.log(promptData);
+          return <p>stuff</p>;
+        })}
       </div>
 
-      <div className="savedPrompts">
+      {/* <div className="savedPrompts">
         <h2>Saved Prompts</h2>
-        {savedPrompts.map((prompt) => (
+        {user.savedPrompts.map((prompt) => (
           <UserPrompt
             title={prompt.title}
             prompt={prompt.prompt}
             key={prompt._id}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
