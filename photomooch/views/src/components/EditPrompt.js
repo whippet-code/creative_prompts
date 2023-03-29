@@ -33,6 +33,10 @@ function EditPrompt(props) {
     }));
   };
 
+  const handleClose = () => {
+    props.handleClose();
+  };
+
   // HOLDING FUNCTION FOR SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +45,12 @@ function EditPrompt(props) {
 
   return (
     <div>
-      <Modal show={props.show} backdrop="static" keyboard={false}>
+      <Modal
+        show={props.show}
+        backdrop="static"
+        keyboard={false}
+        onHide={handleClose}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Edit Prompt</Modal.Title>
         </Modal.Header>
@@ -134,6 +143,9 @@ function EditPrompt(props) {
         <Modal.Footer>
           <Button variant="primary" onClick={handleSubmit}>
             Save Changes
+          </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
           </Button>
         </Modal.Footer>
       </Modal>

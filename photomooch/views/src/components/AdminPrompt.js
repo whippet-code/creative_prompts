@@ -28,16 +28,20 @@ function AdminPrompt(props) {
     <div>
       <Card style={{ width: "18rem" }}>
         <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>{props.prompt}</Card.Text>
-          <Card.Text>{props.image}</Card.Text>
-          <Card.Text>{props.category}</Card.Text>
-          <Card.Text>{props.tags}</Card.Text>
-          <Card.Text>{props.author}</Card.Text>
+          <Card.Title>{props.prompt.title}</Card.Title>
+          <Card.Text>{props.prompt.prompt}</Card.Text>
+          <Card.Text>{props.prompt.image}</Card.Text>
+          <Card.Text>{props.prompt.category}</Card.Text>
+          <Card.Text>{props.prompt.tags}</Card.Text>
+          <Card.Text>{props.prompt.author}</Card.Text>
           <Button variant="primary" onClick={handleShow}>
             Edit
           </Button>
-          <EditPrompt props={props} show={show} handleClose={handleClose} />
+          <EditPrompt
+            prompt={props.prompt}
+            show={show}
+            handleClose={handleClose}
+          />
           <Button variant="primary" onClick={handleDelete}>
             Delete
           </Button>

@@ -43,14 +43,22 @@ function UserDash() {
       <div className="completedPrompts">
         <h2>Completed Prompts</h2>
         {completedPrompts.map((prompt) => (
-          <UserPrompt title={prompt.title} prompt={prompt.prompt} />
+          <UserPrompt
+            title={prompt.title}
+            prompt={prompt.prompt}
+            key={prompt._id}
+          />
         ))}
       </div>
 
       <div className="savedPrompts">
         <h2>Saved Prompts</h2>
         {savedPrompts.map((prompt) => (
-          <UserPrompt title={prompt.title} prompt={prompt.prompt} />
+          <UserPrompt
+            title={prompt.title}
+            prompt={prompt.prompt}
+            key={prompt._id}
+          />
         ))}
       </div>
     </div>

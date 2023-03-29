@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import PromptHolder from "./components/PromptHolder";
 
 //test imports
+import AdminDash from "./components/AdminDash";
 
 function App() {
   const [prompts, setPrompts] = useState([]);
@@ -20,7 +21,8 @@ function App() {
 
   return (
     <div className="App">
-      <PromptHolder prompts={prompts} />
+      {/* <PromptHolder prompts={prompts} /> */}
+      <AdminDash prompts={prompts} />
     </div>
   );
 }
