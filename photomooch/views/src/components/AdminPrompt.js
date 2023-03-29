@@ -26,7 +26,7 @@ function AdminPrompt(props) {
 
   return (
     <div>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "36rem" }}>
         <Card.Body>
           <Card.Title>{props.prompt.title}</Card.Title>
           <Card.Text>{props.prompt.prompt}</Card.Text>
@@ -34,17 +34,19 @@ function AdminPrompt(props) {
           <Card.Text>{props.prompt.category}</Card.Text>
           <Card.Text>{props.prompt.tags}</Card.Text>
           <Card.Text>{props.prompt.author}</Card.Text>
-          <Button variant="primary" onClick={handleShow}>
-            Edit
-          </Button>
-          <EditPrompt
-            prompt={props.prompt}
-            show={show}
-            handleClose={handleClose}
-          />
-          <Button variant="primary" onClick={handleDelete}>
-            Delete
-          </Button>
+          <div className="editButtons">
+            <Button variant="primary" onClick={handleShow}>
+              Edit
+            </Button>
+            <EditPrompt
+              prompt={props.prompt}
+              show={show}
+              handleClose={handleClose}
+            />
+            <Button variant="primary" onClick={handleDelete}>
+              Delete
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     </div>
