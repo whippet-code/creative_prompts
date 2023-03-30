@@ -7,9 +7,6 @@ import { useState, useEffect } from "react";
 //import components
 import PromptHolder from "./components/PromptHolder";
 
-//test imports
-import UserDash from "./components/UserDash";
-
 function App() {
   const [prompts, setPrompts] = useState([]);
 
@@ -22,7 +19,6 @@ function App() {
   return (
     <div className="App">
       <PromptHolder prompts={prompts} />
-      <UserDash prompts={prompts} />
     </div>
   );
 }

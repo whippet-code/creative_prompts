@@ -31,4 +31,36 @@ router.post("/", async (req, res) => {
   res.json({ message: `New prompt added to DB - ${newPrompt.title}` });
 });
 
+// Update a prompt in the database via PUT request and use req body JSON object
+// middlewear checks not implemented as yet. auth & admin
+router.put("/:id", async (req, res) => {
+  // get prompt from db
+  const prompt = await Prompt.findById(req.params.id);
+  if (!prompt) return res.status(404).send("Prompt not found.");
+  // update prompt
+  prompt = {
+    ...prompt,
+    ...req.body,
+  };
+
+  // save updated prompt to db
+  await prompt.save();
+
+  // confirm prompt was updated in db
+  res.json({ message: `Prompt updated in DB - ${prompt.title}` });
+});
+
+// Delete a prompt from the database via DELETE request and prompt _id
+// middlewear checks not implemented as yet. auth & admin
+router.delete("/:id", async (req, res) => {
+  // get prompt from db
+  const prompt = await Prompt.findById(req.params.id);
+  if (!prompt) return res.status(404).send("Prompt not found.");
+  // delete prompt from db
+  await prompt.remove();
+
+  // confirm prompt was deleted from db
+  res.json({ message: `Prompt deleted from DB - ${prompt.title}` });
+});
+
 module.exports = router;

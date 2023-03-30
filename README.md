@@ -27,12 +27,9 @@ load/splash screen
 use dovenv for api keys and other sensitive data
 Tidy components folder to user / admin folders??
 
-### Tuesday 28th March // Wednesday 29th March - Build
+### Thurs - Build
 
 Edit Prompt component X // set up submit
-admin dashboard - comp - Each prompt has edit & delete buttons
-admin / user acc prompt cards - title, prompt, (conditional edit/delete buttons admin/user)
-user dashboard - comp
 user login - comp X // set up submit
 user register - comp X //set up submit
 
@@ -42,8 +39,6 @@ Prompt cards need conditional save / completed buttons if user is loggedin
 
 ### server routes to add.
 
-edit prompt
-delete prompt
 login
 register
 

@@ -29,7 +29,14 @@ router.post("/login", async (req, res) => {
 
   // create jwt token
   const token = jwt.sign(
-    { _id: user._id, isAdmin: user.isAdmin, username: user.username },
+    {
+      _id: user._id,
+      isAdmin: user.isAdmin,
+      username: user.username,
+      email: user.email,
+      completedPrompts: user.completedPrompts,
+      savedPrompts: user.savedPrompts,
+    },
     "jwtPrivateKey",
     { expiresIn: "12h" }
   );

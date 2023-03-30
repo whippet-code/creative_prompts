@@ -12,7 +12,8 @@ import UserPrompt from "./UserPrompt";
 
 // passed full prompt list as props
 function UserDash(props) {
-  // user info pulled from JWT?
+
+  // user info pulled from JWT? // SAMPLE USER DATA FOR TESTING
   const [user, setUser] = useState({
     username: "testUser",
     email: "test@gmail.com",
