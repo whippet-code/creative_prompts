@@ -9,7 +9,11 @@ import { Form, Button } from "react-bootstrap";
 function Register() {
   const [logInData, setLogInData] = useState({
     username: "",
+    email: "",
     password: "",
+    isAdmin: false,
+    savedPrompt: [],
+    completedPrompts: [],
   });
 
   const handleChange = (e) => {

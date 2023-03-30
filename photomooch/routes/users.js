@@ -45,10 +45,10 @@ router.post("/login", async (req, res) => {
   res.send(token);
 });
 
-// register route
+// register new user route
 router.post("/register", async (req, res) => {
-  const { error } = validateUser(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  // const { error } = validateUser(req.body);
+  // if (error) return res.status(400).send(error.details[0].message);
 
   // get users from db
   const users = await getUsers();
@@ -59,6 +59,7 @@ router.post("/register", async (req, res) => {
 
   // create new user
   const newUser = new User({
+    id: new Date(),
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
