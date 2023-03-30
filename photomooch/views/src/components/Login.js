@@ -20,10 +20,30 @@ function Login() {
     }));
   };
 
-  // HOLDING FUNCTION FOR SUBMIT
+  //login fetch call
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(logInData);
+    // take logInData and send to server
+    try {
+      fetch("http://localhost:8080/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(logInData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(`Recieved login request. Server response ${data}`);
+          // if data.token exists, store token in localStorage
+          if (data.token) {
+            localStorage.setItem("token", data.token);
+          }
+        });
+    }
+    catch (err) {
+      console.log(err);
+    }
   };
 
   return (

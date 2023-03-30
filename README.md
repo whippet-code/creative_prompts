@@ -29,18 +29,9 @@ Tidy components folder to user / admin folders??
 
 ### Thurs - Build
 
-Edit Prompt component X // set up submit
-user login - comp X // set up submit
-user register - comp X //set up submit
-
 Press for prompt conditional????? (appearance wise, big if no prompt on screen then smaller for a reprompt)
 Position of press for prompt and filter button, when prompt on screen.
 Prompt cards need conditional save / completed buttons if user is loggedin
-
-### server routes to add.
-
-login
-register
 
 ## NOTES -
 

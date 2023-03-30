@@ -37,10 +37,22 @@ function EditPrompt(props) {
     props.handleClose();
   };
 
-  // HOLDING FUNCTION FOR SUBMIT
+  // make fetch call to server to update prompt
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(editPromptData);
+    try {
+      fetch(`http://localhost:8080/prompts/${props.prompt._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(editPromptData),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data.message));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

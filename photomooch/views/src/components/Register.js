@@ -20,7 +20,7 @@ function Register() {
     }));
   };
 
-  // HOLDING FUNCTION FOR SUBMIT
+  // Register user
   const handleSubmit = (e) => {
     e.preventDefault();
     // confirm complete
@@ -38,8 +38,22 @@ function Register() {
       alert("Passwords do not match");
       return;
     }
-
-    console.log(logInData);
+    // make fetch call to server to register user
+    try {
+      fetch("http://localhost:8080/users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(logInData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(`Recieved register request. ${data}`);
+        });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
