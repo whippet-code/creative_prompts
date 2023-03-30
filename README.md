@@ -14,11 +14,7 @@ Build as stand alone app?????
 
 // BUILD NOTES, TODOS
 
-server routes???? what's needed
-
-Plan / Build admin page
-Plan / build user acc page
-Plan / enable JWT auth / user log in
+Enable JWT auth / isAdmin / loggedin etc in the backend
 Nav bar
 load/splash screen
 

@@ -34,14 +34,15 @@ function Login() {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(`Recieved login request. Server response ${data}`);
+          console.log(
+            `Recieved login request. Server response ${data.message}`
+          );
           // if data.token exists, store token in localStorage
           if (data.token) {
             localStorage.setItem("token", data.token);
           }
         });
-    }
-    catch (err) {
+    } catch (err) {
       console.log(err);
     }
   };

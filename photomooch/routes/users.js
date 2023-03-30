@@ -11,20 +11,16 @@ const { getUsers, auth, admin, loggedIn } = require("../middlewear/middlewear");
 
 // log in route
 router.post("/login", async (req, res) => {
-  const { error } = validateUser(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
   // get users from db
   const users = await getUsers();
 
   // check if user exists
   const user = users.find((u) => u.username === req.body.username);
-  if (!user) return res.status(400).send("Invalid username or password.");
+  if (!user) return res.status(400).send("Invalid username.");
 
   // check if password is correct
-  const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) {
-    return res.status(400).send("Invalid username or password.");
+  if (user.password !== req.body.password) {
+    return res.status(400).send("Invalid password.");
   }
 
   // create jwt token
@@ -41,8 +37,10 @@ router.post("/login", async (req, res) => {
     { expiresIn: "12h" }
   );
 
+  // confirm login
+  console.log(`User ${user.username} logged in.`);
   // send token to client
-  res.send(token);
+  res.json({ token: token, message: "User logged in." });
 });
 
 // register new user route
