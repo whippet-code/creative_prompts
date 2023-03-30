@@ -45,13 +45,16 @@ const PressForPrompt = (props) => {
 
   return (
     <div className="PressForPrompt">
-      <div className="moochButton" onClick={handleClick}>
-        <img
-          src="https://images.squarespace-cdn.com/content/v1/60f7fe311bfe837c0a7ccb03/fc2d3168-afaf-4650-8dd8-d8353bbb284c/Mooch+Logo+transparent-08.png?format=1500w"
-          alt="Press to prompt button"
-        />
-      </div>
-      {prompt.title === "" ? null : <Prompt {...prompt} />}
+      {prompt.title === "" ? (
+        <div className="moochButton" onClick={handleClick}>
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/60f7fe311bfe837c0a7ccb03/fc2d3168-afaf-4650-8dd8-d8353bbb284c/Mooch+Logo+transparent-08.png?format=1500w"
+            alt="Press for prompt button"
+          />
+        </div>
+      ) : (
+        <Prompt prompt={prompt} setPrompt={setPrompt} />
+      )}
     </div>
   );
 };
