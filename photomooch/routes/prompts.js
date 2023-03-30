@@ -49,14 +49,15 @@ router.put("/:id", async (req, res) => {
 // Delete a prompt from the database via DELETE request and prompt _id
 // middlewear checks not implemented as yet. auth & admin
 router.delete("/:id", async (req, res) => {
-  // get prompt from db
-  const prompt = await Prompt.findById(req.params.id);
-  if (!prompt) return res.status(404).send("Prompt not found.");
-  // delete prompt from db
-  await prompt.remove();
+  // using findByIdAndDelete() to delete prompt from db
+  try {
+    const id = req.params.id;
+    const result = await Prompt.findByIdAndDelete(id);
 
-  // confirm prompt was deleted from db
-  res.json({ message: `Prompt deleted from DB - ${prompt.title}` });
+    res.json({ message: `Prompt deleted from DB - ${result.title}` });
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
 });
 
 module.exports = router;
