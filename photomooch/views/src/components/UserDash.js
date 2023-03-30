@@ -21,8 +21,6 @@ function UserDash(props) {
     isAdmin: false,
   });
 
-  //USEEFFECT / STATE FOR SAVED & COMPLETE PROMPTS.
-
   // useEffect(() => {
   //   fetch("http://localhost:8080/users", {
   //     method: "GET",
@@ -39,11 +37,6 @@ function UserDash(props) {
   //     });
   // }, []);
 
-  //func to get prompt data from prompt id
-  const getPromptById = (id) => {
-    return props.prompts.find((prompt) => prompt._id === id);
-  };
-
   return (
     <div>
       <Card style={{ width: "18rem" }}>
@@ -55,23 +48,21 @@ function UserDash(props) {
 
       <div className="completedPrompts">
         <h2>Completed Prompts</h2>
-        {user.completedPrompts.map((id) => {
-          const promptData = getPromptById(id);
-          console.log(promptData);
-          return <p>stuff</p>;
+        {props.prompts.map((prompt) => {
+          if (user.completedPrompts.includes(prompt._id)) {
+            return <UserPrompt prompt={prompt} key={prompt._id} />;
+          } else return null;
         })}
       </div>
 
-      {/* <div className="savedPrompts">
+      <div className="savedPrompts">
         <h2>Saved Prompts</h2>
-        {user.savedPrompts.map((prompt) => (
-          <UserPrompt
-            title={prompt.title}
-            prompt={prompt.prompt}
-            key={prompt._id}
-          />
-        ))}
-      </div> */}
+        {props.prompts.map((prompt) => {
+          if (user.savedPrompts.includes(prompt._id)) {
+            return <UserPrompt prompt={prompt} key={prompt._id} />;
+          } else return null;
+        })}
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import { Card } from "react-bootstrap";
 function UserPrompt(props) {
   return (
     <div>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "38rem" }}>
         <Card.Body>
           <Card.Title>{props.prompt.title}</Card.Title>
           <Card.Text>{props.prompt.prompt}</Card.Text>
