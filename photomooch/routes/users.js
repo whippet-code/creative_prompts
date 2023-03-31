@@ -68,9 +68,11 @@ router.post("/register", async (req, res) => {
 
   // add newUser to db, don't encypt password at this point (later builds)
   await newUser.save();
+  // server confirmation
+  console.log("New user registered: " + newUser.username);
 
-  // confirm
-  res.send("User registered. Please log in.");
+  // confirm to client
+  res.json({ message: "User registered. Please log in." });
 });
 
 module.exports = router;

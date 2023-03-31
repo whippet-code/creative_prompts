@@ -53,7 +53,7 @@ function Register() {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(`Recieved register request. ${data}`);
+          console.log(`Recieved register request. ${data.message}`);
         });
     } catch (err) {
       console.log(err);
