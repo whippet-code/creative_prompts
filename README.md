@@ -30,6 +30,7 @@ test login / register
 implement react router
 modals styling and keep open on click off modal
 save / completed buttons on prompt cards // conditional on loggedIn
+nav conditional - login -> log out && register -> Dash
 
 ## NOTES -
 
