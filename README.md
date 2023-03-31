@@ -37,6 +37,8 @@ nav conditional - login -> log out && register -> Dash
 When adding prompts, the DB is updated but prompts array in state is not updated. Need to add a useEffect to update the prompts array in state when the DB is updated. this will need the promtp fetch moving to it's own func??
 Also adding prompts tags is lazy/not implemented (just a string input), it need to be an array of strings.
 
+After login / register, the user is redirected to the home page. Need to redirect to the user dashboard.
+
 #### Router
 
 Home // Splash screen ----> PromptHolder not logged in

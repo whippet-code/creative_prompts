@@ -6,7 +6,7 @@ import { useState } from "react";
 // bootstrap comps
 import { Form, Button } from "react-bootstrap";
 
-function Register() {
+function Register(props) {
   const [logInData, setLogInData] = useState({
     username: "",
     email: "",
@@ -55,6 +55,16 @@ function Register() {
         .then((data) => {
           console.log(`Recieved register request. ${data.message}`);
         });
+      // clear form
+      setLogInData({
+        username: "",
+        email: "",
+        password: "",
+        passwordConfirm: "",
+      });
+      alert("Registration successful. Please log in.");
+      // redirect to login page
+      props.navigate("/login");
     } catch (err) {
       console.log(err);
     }

@@ -39,7 +39,7 @@ router.post("/login", async (req, res) => {
 
   // confirm login
   console.log(`User ${user.username} logged in.`);
-  // send token to client
+  // send user data & token to client
   res.json({ token: token, message: "User logged in." });
 });
 

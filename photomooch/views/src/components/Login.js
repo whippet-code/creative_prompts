@@ -6,7 +6,7 @@ import { useState } from "react";
 // bootstrap comps
 import { Form, Button } from "react-bootstrap";
 
-function Login() {
+function Login(props) {
   const [logInData, setLogInData] = useState({
     username: "",
     password: "",
@@ -23,6 +23,12 @@ function Login() {
   //login fetch call
   const handleSubmit = (e) => {
     e.preventDefault();
+    //ensure form is complete
+    if (!logInData.username || !logInData.password) {
+      alert("Please complete all fields");
+      return;
+    }
+
     // take logInData and send to server
     try {
       fetch("http://localhost:8080/users/login", {
@@ -41,6 +47,9 @@ function Login() {
           if (data.token) {
             localStorage.setItem("token", data.token);
           }
+          props.setIsLoggedIn(true);
+          // send to route path "/"
+          props.navigate("/");
         });
     } catch (err) {
       console.log(err);
