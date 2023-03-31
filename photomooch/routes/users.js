@@ -40,7 +40,17 @@ router.post("/login", async (req, res) => {
   // confirm login
   console.log(`User ${user.username} logged in.`);
   // send user data & token to client
-  res.json({ token: token, message: "User logged in." });
+  res.json({
+    token: token,
+    user: {
+      id: user._id,
+      username: user.username,
+      isAdmin: user.isAdmin,
+      savedPrompts: user.savedPrompts,
+      completedPrompts: user.completedPrompts,
+    },
+    message: "User logged in.",
+  });
 });
 
 // register new user route

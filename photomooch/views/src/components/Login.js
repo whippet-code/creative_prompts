@@ -47,6 +47,11 @@ function Login(props) {
           if (data.token) {
             localStorage.setItem("token", data.token);
           }
+          // if data.user exists, store user in localStorage - this is userinfo
+          if (data.user) {
+            localStorage.setItem("user", data.user);
+            props.setUser(data.user);
+          }
           props.setIsLoggedIn(true);
           // send to route path "/"
           props.navigate("/");

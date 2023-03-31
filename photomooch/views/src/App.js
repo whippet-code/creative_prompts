@@ -14,13 +14,16 @@ import PromptHolder from "./components/PromptHolder";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import UserDash from "./components/UserDash";
+import AdminDash from "./components/AdminDash";
 
 function App() {
   const [prompts, setPrompts] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     setIsLoggedIn(false);
     window.location.href = "/";
   };
@@ -35,7 +38,7 @@ function App() {
 
   // check if token exists in localStorage
   useEffect(() => {
-    if (localStorage.getItem("token")) {
+    if (localStorage.getItem("user")) {
       setIsLoggedIn(true);
     }
   }, []);
@@ -46,27 +49,52 @@ function App() {
         <Link to="/" className="link">
           Home
         </Link>
+
         {isLoggedIn ? (
-          <Button onClick={handleLogout} className="link">
-            Log Out
-          </Button>
+          user.isAdmin ? (
+            <Link to="/admin" className="link">
+              Admin
+            </Link>
+          ) : (
+            <Link to="/dashboard" className="link">
+              Dashboard
+            </Link>
+          )
         ) : (
           <Link to="/login" className="link">
             Log In
           </Link>
         )}
-        <Link to="/register" className="link">
-          Register
-        </Link>
+
+        {isLoggedIn ? (
+          <Link className="link" onClick={handleLogout}>
+            Log Out
+          </Link>
+        ) : (
+          <Link to="/register" className="link">
+            Register
+          </Link>
+        )}
       </nav>
       <Routes>
         <Route exact path="/" element={<PromptHolder prompts={prompts} />} />
         <Route
           path="/login"
-          element={<Login setIsLoggedIn={setIsLoggedIn} navigate={navigate} />}
+          element={
+            <Login
+              setIsLoggedIn={setIsLoggedIn}
+              navigate={navigate}
+              user={user}
+              setUser={setUser}
+            />
+          }
         />
         <Route path="/register" element={<Register navigate={navigate} />} />
-        <Route path="/dashboard" element={<UserDash />} />
+        <Route
+          path="/dashboard"
+          element={<UserDash prompts={prompts} user={user} />}
+        />
+        <Route path="/admin" element={<AdminDash prompts={prompts} />} />
       </Routes>
     </div>
   );

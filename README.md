@@ -26,18 +26,17 @@ Tidy components folder to user / admin folders??
 ### Fri - Build
 
 Prompt cards need conditional save / completed buttons if user is loggedin
-test login / register
-implement react router
+
 modals styling and keep open on click off modal
 save / completed buttons on prompt cards // conditional on loggedIn
-nav conditional - login -> log out && register -> Dash
 
 ## NOTES -
 
 When adding prompts, the DB is updated but prompts array in state is not updated. Need to add a useEffect to update the prompts array in state when the DB is updated. this will need the promtp fetch moving to it's own func??
+
 Also adding prompts tags is lazy/not implemented (just a string input), it need to be an array of strings.
 
-After login / register, the user is redirected to the home page. Need to redirect to the user dashboard.
+DASHBOARDS - USER -> load user details from jwt
 
 #### Router
 
