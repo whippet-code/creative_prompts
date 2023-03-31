@@ -23,11 +23,12 @@ load/splash screen
 use dovenv for api keys and other sensitive data
 Tidy components folder to user / admin folders??
 
-### Fri - Build
+### Build
 
 Prompt cards need conditional save / completed buttons if user is loggedin
 
 modals styling and keep open on click off modal
+
 save / completed buttons on prompt cards // conditional on loggedIn
 
 ## NOTES -
@@ -36,25 +37,6 @@ When adding prompts, the DB is updated but prompts array in state is not updated
 
 Also adding prompts tags is lazy/not implemented (just a string input), it need to be an array of strings.
 
-DASHBOARDS - USER -> load user details from jwt
-
 #### Router
 
 Home // Splash screen ----> PromptHolder not logged in
-->
-Login / Register
-->
-PromptHolder
-->
-User dashboard || Admin dashboard
-
-#### Nav bar
-
-logo ---> home
-login / logout ---> login / logout
-register ---> register
-
-user acc || admin ---> user dashboard || admin dashboard
-
-not logged in -- logo, login, register
-logged in -- logo, logout, user acc || admin
