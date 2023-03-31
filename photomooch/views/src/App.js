@@ -7,8 +7,6 @@ import "./App.css";
 
 import { useState, useEffect } from "react";
 
-import { Button } from "react-bootstrap";
-
 //import components
 import PromptHolder from "./components/PromptHolder";
 import Login from "./components/Login";
