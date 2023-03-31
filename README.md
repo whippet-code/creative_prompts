@@ -23,9 +23,13 @@ load/splash screen
 use dovenv for api keys and other sensitive data
 Tidy components folder to user / admin folders??
 
-### Thurs - Build
+### Fri - Build
 
 Prompt cards need conditional save / completed buttons if user is loggedin
+test login / register
+implement react router
+modals styling and keep open on click off modal
+save / completed buttons on prompt cards // conditional on loggedIn
 
 ## NOTES -
 
