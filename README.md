@@ -27,9 +27,11 @@ Tidy components folder to user / admin folders??
 
 Prompt cards need conditional save / completed buttons if user is loggedin
 
-modals styling and keep open on click off modal
-
 save / completed buttons on prompt cards // conditional on loggedIn
+
+routes not "protected".
+
+admin delete not working?????
 
 ## NOTES -
 

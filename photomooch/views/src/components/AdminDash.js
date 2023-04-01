@@ -12,10 +12,10 @@ import AddPrompt from "./AddPrompt";
 
 function AdminDash(props) {
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
+    <div className="dash">
+      <Card className="dash-title-card">
         <Card.Body>
-          <Card.Title>Admin Dashboard</Card.Title>
+          <Card.Title style={{ color: "black" }}>Admin Dashboard</Card.Title>
         </Card.Body>
       </Card>
 

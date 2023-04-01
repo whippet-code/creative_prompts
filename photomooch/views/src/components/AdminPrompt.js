@@ -17,18 +17,27 @@ function AdminPrompt(props) {
 
   // fetch call to server to delete prompt from db using id
   const handleDelete = () => {
-    fetch(`http://localhost:8080/prompts/${props._id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data.message));
+    try {
+      fetch(`http://localhost:8080/prompts/${props.prompt._id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data.message));
+
+      // refresh page to show updated prompt list
+      window.location.reload();
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
-    <div>
+    <div className="admin-prompt">
       <Card style={{ width: "36rem" }}>
         <Card.Body>
-          <Card.Title>{props.prompt.title}</Card.Title>
+          <Card.Title style={{ color: "black" }}>
+            {props.prompt.title}
+          </Card.Title>
           <Card.Text>{props.prompt.prompt}</Card.Text>
           <Card.Text>{props.prompt.image}</Card.Text>
           <Card.Text>{props.prompt.category}</Card.Text>

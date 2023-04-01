@@ -51,6 +51,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   // using findByIdAndDelete() to delete prompt from db
   try {
+    console.log(`Delete request for prompt with id: ${req.params.id}`);
     const id = req.params.id;
     const result = await Prompt.findByIdAndDelete(id);
 

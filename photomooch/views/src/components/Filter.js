@@ -39,7 +39,13 @@ const Filter = (props) => {
           Set Filter
         </button>
       )}
-      <Modal show={show} onHide={handleClose}>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        size="lg"
+        centered
+      >
         <Modal.Header closeButton>
           <Modal.Title>Filter Prompts</Modal.Title>
         </Modal.Header>
