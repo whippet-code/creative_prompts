@@ -14,8 +14,8 @@ function AdminDash(props) {
   return (
     <div className="dash">
       <Card className="dash-title-card">
-        <Card.Body>
-          <Card.Title style={{ color: "black" }}>Admin Dashboard</Card.Title>
+        <Card.Body className="dash-title">
+          <Card.Title>Admin Dashboard</Card.Title>
         </Card.Body>
       </Card>
 

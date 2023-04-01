@@ -1,7 +1,42 @@
 * {
   background: #fff;
   color: #000;
-  font-family: "calder-script", sans-serif;
+  /* font-family: "calder-script", sans-serif; */
+  font-family: "Anonymous Pro", monospace;
   font-weight: 400;
   font-style: normal;
+}
+
+/*  nav bar styling */
+nav {
+  background-color: transparent;
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  padding: 0 2rem;
+  height: 4rem;
+}
+
+.link {
+  /* Create the gradient. */
+  background: linear-gradient(
+    133deg,
+    rgba(21, 255, 243, 1) 0%,
+    rgba(215, 99, 99, 1) 60%
+  );
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  font-family: "calder-script", sans-serif;
+  font-size: 2.5rem;
 }

@@ -35,13 +35,12 @@ function AdminPrompt(props) {
     <div className="admin-prompt">
       <Card style={{ width: "36rem" }}>
         <Card.Body>
+          <Card.Img variant="top" src={props.prompt.image} />
           <Card.Title style={{ color: "black" }}>
             {props.prompt.title}
           </Card.Title>
           <Card.Text>{props.prompt.prompt}</Card.Text>
-          <Card.Text>{props.prompt.image}</Card.Text>
           <Card.Text>{props.prompt.category}</Card.Text>
-          <Card.Text>{props.prompt.tags}</Card.Text>
           <Card.Text>{props.prompt.author}</Card.Text>
           <div className="editButtons">
             <Button variant="primary" onClick={handleShow}>
