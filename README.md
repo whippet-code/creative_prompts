@@ -9,6 +9,8 @@ Build as stand alone app?????
 
 Enable JWT auth / isAdmin / loggedin etc in the backend
 
+User dash - width breakpoint (go to single column (flex-direction: column) at 600px)
+
 ### Build
 
 Prompt cards need conditional save / completed buttons if user is loggedin

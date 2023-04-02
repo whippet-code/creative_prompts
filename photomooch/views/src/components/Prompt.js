@@ -16,8 +16,8 @@ const Prompt = (props) => {
     <div className="Prompt flip-card">
       <div className="card-holder flip-card-inner">
         <div className="flip-card-front">
-          <h1 className="card-category">{props.prompt.category}</h1>
-          <h3 className="card-title">{props.prompt.title}</h3>
+          <h1 className="card-title">{props.prompt.title}</h1>
+          <h2 className="card-category">{props.prompt.category}</h2>
           <img
             className="card-image"
             src={props.prompt.image}

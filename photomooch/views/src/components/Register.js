@@ -71,8 +71,8 @@ function Register(props) {
   };
 
   return (
-    <div>
-      <Form>
+    <div className="form">
+      <Form className="mx-auto m-10 p-5">
         <Form.Group className="mb-3" controlId="formUsername">
           <Form.Label>Username</Form.Label>
           <Form.Control
