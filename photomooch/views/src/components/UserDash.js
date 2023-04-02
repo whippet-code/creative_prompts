@@ -12,30 +12,32 @@ import UserPrompt from "./UserPrompt";
 // passed full prompt list & userInfo as props
 function UserDash(props) {
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Body>
+    <div className="dash">
+      <Card className="dash-title-card">
+        <Card.Body className="dash-title">
           <Card.Title>{props.user.username}</Card.Title>
-          <Card.Text>User Stats</Card.Text>
+          <Card.Text className="card-prompt">User Dashboard</Card.Text>
         </Card.Body>
       </Card>
 
-      <div className="completedPrompts">
-        <h2>Completed Prompts</h2>
-        {props.prompts.map((prompt) => {
-          if (props.user.completedPrompts.includes(prompt._id)) {
-            return <UserPrompt prompt={prompt} key={prompt._id} />;
-          } else return null;
-        })}
-      </div>
+      <div className="user-dash">
+        <div className="allPrompts completedPrompts">
+          <h2>Completed Prompts</h2>
+          {props.prompts.map((prompt) => {
+            if (props.user.completedPrompts.includes(prompt._id)) {
+              return <UserPrompt prompt={prompt} key={prompt._id} />;
+            } else return null;
+          })}
+        </div>
 
-      <div className="savedPrompts">
-        <h2>Saved Prompts</h2>
-        {props.prompts.map((prompt) => {
-          if (props.user.savedPrompts.includes(prompt._id)) {
-            return <UserPrompt prompt={prompt} key={prompt._id} />;
-          } else return null;
-        })}
+        <div className="allPrompts savedPrompts">
+          <h2>Saved Prompts</h2>
+          {props.prompts.map((prompt) => {
+            if (props.user.savedPrompts.includes(prompt._id)) {
+              return <UserPrompt prompt={prompt} key={prompt._id} />;
+            } else return null;
+          })}
+        </div>
       </div>
     </div>
   );

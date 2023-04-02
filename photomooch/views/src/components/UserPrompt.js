@@ -7,10 +7,12 @@ import { Card } from "react-bootstrap";
 //props are prompt data
 function UserPrompt(props) {
   return (
-    <div>
-      <Card style={{ width: "38rem" }}>
+    <div className="user-prompt">
+      <Card style={{ width: "36rem" }}>
         <Card.Body>
-          <Card.Title>{props.prompt.title}</Card.Title>
+          <Card.Title className="user-prompt-title">
+            {props.prompt.title}
+          </Card.Title>
           <Card.Text>{props.prompt.prompt}</Card.Text>
         </Card.Body>
       </Card>

@@ -40,3 +40,10 @@ nav {
   font-family: "calder-script", sans-serif;
   font-size: 2.5rem;
 }
+
+.link:hover {
+  font-weight: 700;
+  background-size: 5%;
+  transition: font-weight 0.5s ease;
+  transition: background-size 5s ease;
+}
