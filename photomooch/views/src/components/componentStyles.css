@@ -169,6 +169,16 @@
   margin-bottom: 0.5rem;
 }
 
+.card-button {
+  color: #fff;
+  width: 10rem;
+  font-weight: 400;
+  height: 4rem;
+  border: 2px solid white;
+  border-radius: 1rem;
+  text-align: center;
+}
+
 /* PromptHolder */
 
 .PromptHolder {

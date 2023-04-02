@@ -19,11 +19,15 @@ routes not "protected".
 
 LOG IN -> ERROR Message to user
 
+Close prompt button more obvious color.
+
 ## NOTES -
 
 When adding prompts, the DB is updated but prompts array in state is not updated. Need to add a useEffect to update the prompts array in state when the DB is updated. this will need the promtp fetch moving to it's own func??
 
 Also adding prompts tags is lazy/not implemented (just a string input), it need to be an array of strings.
+
+** Color coded cards on prompt category, match brand **
 
 ### POST SUBMIT TODOS
 
