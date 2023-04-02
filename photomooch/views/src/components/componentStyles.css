@@ -47,8 +47,8 @@
   min-height: 50px;
 }
 
-.PressForPrompt:hover {
-  transform: scale(0.9) rotate(360deg);
+.moochButton:hover {
+  transform: scale(1.05);
   transition: 0.8s ease;
 }
 
@@ -196,7 +196,7 @@
   justify-content: center;
   min-width: 80px;
   min-height: 80px;
-  margin: 5rem auto;
+  margin: 7.4rem auto;
 }
 
 .moochButton img {
