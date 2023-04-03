@@ -5,9 +5,7 @@
 Later progression - Medium based usage (visual prompt, writing prompt, etc)
 Build as stand alone app?????
 
-// BUILD NOTES, TODOS
-
-Enable JWT auth / isAdmin / loggedin etc in the backend
+// BUILD NOTES / TODOS
 
 ### Build
 
@@ -15,11 +13,9 @@ Prompt cards need conditional save / completed buttons if user is loggedin
 
 save / completed buttons on prompt cards // conditional on loggedIn
 
-routes not "protected".
+Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
-LOG IN -> ERROR Message to user
-
-Close prompt button more obvious color.
+LOG IN -> ERROR Message to user $$$$$ TROUBLE HERE.
 
 ## NOTES -
 

@@ -43,6 +43,11 @@ function Login(props) {
           console.log(
             `Recieved login request. Server response ${data.message}`
           );
+          //verify if server response is a successful log in (data.token exists)
+          if (!data.token) {
+            alert(data);
+            return;
+          }
           // if data.token exists, store token in localStorage
           if (data.token) {
             localStorage.setItem("token", data.token);
