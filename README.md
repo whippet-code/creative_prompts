@@ -23,6 +23,8 @@ Also adding prompts tags is lazy/not implemented (just a string input), it need 
 
 ** Color coded cards on prompt category, match brand **
 
+**Login / Register styling for mobile - form too narrow - media query for screen < 600px go 90% width ??**
+
 ### POST SUBMIT TODOS
 
 use dovenv for api keys and other sensitive data
