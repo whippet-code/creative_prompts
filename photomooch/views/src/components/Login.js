@@ -44,8 +44,8 @@ function Login(props) {
             `Recieved login request. Server response ${data.message}`
           );
           //verify if server response is a successful log in (data.token exists)
-          if (!data.token) {
-            alert(data);
+          if (data.message !== "User logged in.") {
+            alert("Invalid username or password");
             return;
           }
           // if data.token exists, store token in localStorage

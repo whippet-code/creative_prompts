@@ -16,11 +16,11 @@ router.post("/login", async (req, res) => {
 
   // check if user exists
   const user = users.find((u) => u.username === req.body.username);
-  if (!user) return res.status(400).send("Invalid username.");
+  if (!user) return res.status(400).json({ message: "Invalid username." });
 
   // check if password is correct
   if (user.password !== req.body.password) {
-    return res.status(400).send("Invalid password.");
+    return res.status(400).json({ message: "Invalid password." });
   }
 
   // create jwt token

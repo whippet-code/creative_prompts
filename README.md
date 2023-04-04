@@ -15,8 +15,6 @@ save / completed buttons on prompt cards // conditional on loggedIn
 
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
-LOG IN -> ERROR Message to user $$$$$ TROUBLE HERE.
-
 ## NOTES -
 
 When adding prompts, the DB is updated but prompts array in state is not updated. Need to add a useEffect to update the prompts array in state when the DB is updated. this will need the promtp fetch moving to it's own func??
