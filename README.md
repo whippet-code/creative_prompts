@@ -21,7 +21,7 @@ When adding prompts, the DB is updated but prompts array in state is not updated
 
 Also adding prompts tags is lazy/not implemented (just a string input), it need to be an array of strings.
 
-** Color coded cards on prompt category, match brand **
+Text color on "learn" prompts card, needs to be dark. (explore color variable.)
 
 ### POST SUBMIT TODOS
 

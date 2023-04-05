@@ -12,10 +12,28 @@ const Prompt = (props) => {
     });
   };
 
+  // set div classname for correct card colour, from card category
+  const cardDivClass = () => {
+    switch (props.prompt.category) {
+      case "Explore":
+        return "flip-card-front explore";
+      case "Learn":
+        return "flip-card-front learn";
+      case "Take Notice":
+        return "flip-card-front take-notice";
+      case "Connect":
+        return "flip-card-front connect";
+      case "Give":
+        return "flip-card-front give";
+      default:
+        return "flip-card-front";
+    }
+  };
+
   return (
     <div className="Prompt flip-card">
       <div className="card-holder flip-card-inner">
-        <div className="flip-card-front">
+        <div className={cardDivClass()}>
           <h1 className="card-title">{props.prompt.title}</h1>
           <h2 className="card-category">{props.prompt.category}</h2>
           <img

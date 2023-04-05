@@ -108,6 +108,23 @@
   background-color: rgb(213, 74, 81);
   color: black;
 }
+.give {
+  background-color: var(--give-color);
+}
+.explore {
+  background-color: var(--explore-color);
+}
+.learn {
+  background-color: var(--learn-color);
+  font-color: var(--explore-color);
+  color: var(--explore-color);
+}
+.take-notice {
+  background-color: var(--take-notice-color);
+}
+.connect {
+  background-color: var(--connect-color);
+}
 
 /* Style the back side */
 .flip-card-back {
