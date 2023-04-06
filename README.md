@@ -9,12 +9,8 @@ Build as stand alone app?????
 
 ### Build
 
-\***\*\*\*\*** localstorage JSON.parse / JSON.stringify in login and prompt fetches?????? \***\*\*\*\***
-WHEN GETTING STORE THE CALL IS IN PARENTHESIS. ie localStorage.getItem("user")
-
-Prompt cards need conditional save / completed buttons if user is loggedin
-save / completed buttons on prompt cards // conditional on loggedIn
-
+save completed button click handlers to make fetch calls / update state
+api routes for editing users saved / completed prompts
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
 ```On first load have the home page show a pop up explaining how to use the app, and what it is. ~~~~

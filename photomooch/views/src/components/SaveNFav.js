@@ -23,7 +23,6 @@ const SaveNFav = (props) => {
 
   //click handlers
   const handleSave = () => {
-    setIsSaved(!isSaved);
     // if prompt is saved, remove from savedPrompts locally
     if (isSaved) {
       const index = props.user.savedPrompts.indexOf(props.promptId);
@@ -53,6 +52,8 @@ const SaveNFav = (props) => {
       console.log(err);
       alert("Error updating. Please try again.");
     }
+    // update state
+    setIsSaved(!isSaved);
   };
 
   const handleComplete = () => {
@@ -70,7 +71,7 @@ const SaveNFav = (props) => {
           Save This
         </Button>
       )}
-      {isSaved ? (
+      {isCompleted ? (
         <Button variant="success" onClick={handleComplete}>
           Completed
         </Button>
