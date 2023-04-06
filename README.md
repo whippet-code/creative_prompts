@@ -15,6 +15,8 @@ save / completed buttons on prompt cards // conditional on loggedIn
 
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
+```On first load have the home page show a pop up explaining how to use the app, and what it is. ~~~~
+
 ## NOTES -
 
 When adding prompts, the DB is updated but prompts array in state is not updated. Need to add a useEffect to update the prompts array in state when the DB is updated. this will need the promtp fetch moving to it's own func??
@@ -27,3 +29,4 @@ Text color on "learn" prompts card, needs to be dark. (explore color variable.)
 
 use dovenv for api keys and other sensitive data
 Tidy components folder to user / admin folders??
+```
