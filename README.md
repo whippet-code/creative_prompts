@@ -9,13 +9,14 @@ Build as stand alone app?????
 
 ### Build
 
+\***\*\*\*\*** localstorage JSON.parse / JSON.stringify in login and prompt fetches?????? \***\*\*\*\***
 Prompt cards need conditional save / completed buttons if user is loggedin
-
 save / completed buttons on prompt cards // conditional on loggedIn
 
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
 ```On first load have the home page show a pop up explaining how to use the app, and what it is. ~~~~
+~~~ Also need fallback for is server unavailable. ~~~
 
 ## NOTES -
 
