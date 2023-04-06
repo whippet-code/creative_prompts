@@ -12,18 +12,47 @@ const SaveNFav = (props) => {
 
   useEffect(() => {
     // check if prompt is saved
-    if (props.savedPrompts.includes(props.promptId)) {
+    if (props.user.savedPrompts.includes(props.promptId)) {
       setIsSaved(true);
     }
     // check if prompt is completed
-    if (props.completedPrompts.includes(props.promptId)) {
+    if (props.user.completedPrompts.includes(props.promptId)) {
       setIsCompleted(true);
     }
-  }, [props, props.promptId]);
+  }, [props.promptId, props.user.savedPrompts, props.user.completedPrompts]);
 
   //click handlers
   const handleSave = () => {
     setIsSaved(!isSaved);
+    // if prompt is saved, remove from savedPrompts locally
+    if (isSaved) {
+      const index = props.user.savedPrompts.indexOf(props.promptId);
+      props.user.savedPrompts.splice(index, 1);
+    }
+    // if prompt is not saved, add to savedPrompts locally
+    else {
+      props.user.savedPrompts.push(props.promptId);
+    }
+
+    // make fetch request to update users savedPrompts in DB
+    try {
+      fetch(`/api/users/${props.user._id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          savedPrompts: props.user.savedPrompts,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data.message);
+        });
+    } catch (err) {
+      console.log(err);
+      alert("Error updating. Please try again.");
+    }
   };
 
   const handleComplete = () => {

@@ -10,6 +10,8 @@ Build as stand alone app?????
 ### Build
 
 \***\*\*\*\*** localstorage JSON.parse / JSON.stringify in login and prompt fetches?????? \***\*\*\*\***
+WHEN GETTING STORE THE CALL IS IN PARENTHESIS. ie localStorage.getItem("user")
+
 Prompt cards need conditional save / completed buttons if user is loggedin
 save / completed buttons on prompt cards // conditional on loggedIn
 

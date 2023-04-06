@@ -9,13 +9,9 @@ const Prompt = (props) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const fetchUser = async () => {
-      const isUser = localStorage.getItem("user");
-      if (isUser) {
-        setUser(JSON.parse(isUser));
-      }
-    };
-    fetchUser();
+    if (localStorage.getItem("user")) {
+      setUser(JSON.parse(localStorage.getItem("user")));
+    }
   }, []);
 
   const handleClose = () => {
@@ -60,11 +56,7 @@ const Prompt = (props) => {
         <div className="flip-card-back">
           <h2 className="card-title">{props.prompt.title}</h2>
           <h3 className="card-prompt">{props.prompt.prompt}</h3>
-          {/* {localStorage.getItem("user") ? (
-            <SaveNFav {...user} promptId={props.prompt._id} />
-          ) : (
-            ""
-          )} */}
+          {user ? <SaveNFav user={user} promptId={props.prompt._id} /> : ""}
           <Button
             className="card-button"
             variant="outline-dark"

@@ -54,7 +54,7 @@ function Login(props) {
           }
           // if data.user exists, store user in localStorage - this is userinfo
           if (data.user) {
-            localStorage.setItem("user", data.user);
+            localStorage.setItem("user", JSON.stringify(data.user));
             props.setUser(data.user);
           }
           props.setIsLoggedIn(true);
