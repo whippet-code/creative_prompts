@@ -85,4 +85,50 @@ router.post("/register", async (req, res) => {
   res.json({ message: "User registered. Please log in." });
 });
 
+// edit user's saved promtps array by id
+router.put("/save/:id", async (req, res) => {
+  // get users from db
+  const users = await getUsers();
+
+  // find user by id
+  const user = users.find((u) => u._id === req.params.id);
+  if (!user) return res.status(400).send("User not found.");
+
+  // update user's saved prompts array
+  user.savedPrompts = req.body.savedPrompts;
+
+  // save updated user to db
+  await user.save();
+
+  // server confirmation
+  console.log(`User ${user.username} saved prompt ${req.body.savedPrompts}`);
+
+  // confirm to client
+  res.json({ message: "User saved prompt." });
+});
+
+// edit user's completed promtps array by id
+router.put("/complete/:id", async (req, res) => {
+  // get users from db
+  const users = await getUsers();
+
+  // find user by id
+  const user = users.find((u) => u._id === req.params.id);
+  if (!user) return res.status(400).send("User not found.");
+
+  // update user's completed prompts array
+  user.completedPrompts = req.body.completedPrompts;
+
+  // save updated user to db
+  await user.save();
+
+  // server confirmation
+  console.log(
+    `User ${user.username} completed prompt ${req.body.completedPrompts}`
+  );
+
+  // confirm to client
+  res.json({ message: "User completed prompt." });
+});
+
 module.exports = router;
