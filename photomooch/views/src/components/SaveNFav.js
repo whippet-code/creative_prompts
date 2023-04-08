@@ -35,8 +35,8 @@ const SaveNFav = (props) => {
 
     // make fetch request to update users savedPrompts in DB
     try {
-      fetch(`/api/users/${props.user._id}`, {
-        method: "PATCH",
+      fetch(`/users/save${props.user.id}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -56,6 +56,7 @@ const SaveNFav = (props) => {
     setIsSaved(!isSaved);
   };
 
+  // FINSISH AS ABOVE BUT TO USERS/COMPLETE/:ID
   const handleComplete = () => {
     setIsCompleted(!isCompleted);
   };
