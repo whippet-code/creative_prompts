@@ -87,6 +87,7 @@ router.post("/register", async (req, res) => {
 
 // edit user's saved promtps array by id
 router.put("/save/:id", async (req, res) => {
+  console.log("save route hit");
   // get users from db
   const users = await getUsers();
 

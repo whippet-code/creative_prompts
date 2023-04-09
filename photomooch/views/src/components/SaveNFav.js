@@ -35,7 +35,7 @@ const SaveNFav = (props) => {
 
     // make fetch request to update users savedPrompts in DB
     try {
-      fetch(`/users/save${props.user.id}`, {
+      fetch(`http://localhost:8080/users/save/${props.user.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
