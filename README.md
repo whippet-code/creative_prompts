@@ -10,6 +10,7 @@ Build as stand alone app????? // how easy to convert to native???
 ### Build
 
 Fix / test save/comp routes / functions. ----- add / remove prompt completed in prompt document. (add / remove prompt from user document)
+need to think about how to handle the user document, only need user id, saved and completed prompt array. Can i do it in the saveNfav comp? Passing user data as promps is making updating the array tricky? how do props affect state? (need to look into this)
 
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 

@@ -56,7 +56,15 @@ const Prompt = (props) => {
         <div className="flip-card-back">
           <h2 className="card-title">{props.prompt.title}</h2>
           <h3 className="card-prompt">{props.prompt.prompt}</h3>
-          {user ? <SaveNFav user={user} promptId={props.prompt._id} /> : ""}
+          {user ? (
+            <SaveNFav
+              user={user}
+              setUser={setUser}
+              promptId={props.prompt._id}
+            />
+          ) : (
+            ""
+          )}
           <Button
             className="card-button"
             variant="outline-dark"

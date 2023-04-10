@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 
-//props -user & prompt._id
+//props -user, setUser()  & prompt._id
 const SaveNFav = (props) => {
   const [isSaved, setIsSaved] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
@@ -23,14 +23,14 @@ const SaveNFav = (props) => {
 
   //click handlers
   const handleSave = () => {
-    // if prompt is saved, remove from savedPrompts locally
+    // if prompt is saved, remove from savedPrompts
     if (isSaved) {
       const index = props.user.savedPrompts.indexOf(props.promptId);
-      props.user.savedPrompts.splice(index, 1);
+      props.setUser((prev) => (prev = prev.splice(index, 1)));
     }
-    // if prompt is not saved, add to savedPrompts locally
+    // if prompt is not saved, add to savedPrompts
     else {
-      props.user.savedPrompts.push(props.promptId);
+      props.setUser((prev) => (prev = prev.push(props.promptId)));
     }
 
     // make fetch request to update users savedPrompts in DB
@@ -52,11 +52,11 @@ const SaveNFav = (props) => {
       console.log(err);
       alert("Error updating. Please try again.");
     }
-    // update state
+    // update comp state
     setIsSaved(!isSaved);
   };
 
-  // FINSISH AS ABOVE BUT TO USERS/COMPLETE/:ID
+  // FINISH AS ABOVE BUT TO USERS/COMPLETE/:ID
   const handleComplete = () => {
     setIsCompleted(!isCompleted);
   };
