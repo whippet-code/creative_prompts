@@ -2,19 +2,19 @@
 
 ## Web app Photo Mooch - Creative prompts for photographers
 
-Later progression - Medium based usage (visual prompt, writing prompt, etc)
-Build as stand alone app?????
+Later progression - Artistic medium based usage (visual prompt, writing prompt, etc)
+Build as stand alone app????? // how easy to convert to native???
 
 // BUILD NOTES / TODOS
 
 ### Build
 
-save completed button click handlers to make fetch calls / update state
-api routes for editing users saved / completed prompts
+Fix / test save/comp routes / functions. ----- add / remove prompt completed in prompt document. (add / remove prompt from user document)
+
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
-```On first load have the home page show a pop up explaining how to use the app, and what it is. ~~~~
-~~~ Also need fallback for is server unavailable. ~~~
+\***\* On first load have the home page show a pop up explaining how to use the app, and what it is. \*\***
+**_Also need fallback for is server unavailable._**
 
 ## NOTES -
 
@@ -28,4 +28,7 @@ Text color on "learn" prompts card, needs to be dark. (explore color variable.)
 
 use dovenv for api keys and other sensitive data
 Tidy components folder to user / admin folders??
+
+```
+
 ```
