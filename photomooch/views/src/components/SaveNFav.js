@@ -23,14 +23,18 @@ const SaveNFav = (props) => {
 
   //click handlers
   const handleSave = () => {
+    // make copy of user obj
+    const newUser = { ...props.user };
     // if prompt is saved, remove from savedPrompts
     if (isSaved) {
       const index = props.user.savedPrompts.indexOf(props.promptId);
-      props.setUser((prev) => (prev = prev.splice(index, 1)));
+      newUser.savedPrompts.splice(index, 1);
+      props.setUser((prev) => (prev = newUser));
     }
     // if prompt is not saved, add to savedPrompts
     else {
-      props.setUser((prev) => (prev = prev.push(props.promptId)));
+      newUser.savedPrompts.push(props.promptId);
+      props.setUser((prev) => (prev = newUser));
     }
 
     // make fetch request to update users savedPrompts in DB
