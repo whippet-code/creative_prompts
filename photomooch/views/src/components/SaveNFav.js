@@ -37,8 +37,6 @@ const SaveNFav = (props) => {
       props.updateUser((prev) => (prev = newUser));
     }
 
-    console.log(props.user);
-
     // make fetch request to update users savedPrompts in DB
     try {
       fetch(`http://localhost:8080/users/save/${newUser.id}`, {
@@ -67,7 +65,44 @@ const SaveNFav = (props) => {
 
   // FINISH AS ABOVE BUT TO USERS/COMPLETE/:ID
   const handleComplete = () => {
-    setIsCompleted(!isCompleted);
+    // make copy of user obj
+    const newUser = { ...props.user };
+    // if prompt is completed already, remove from completedPrompts
+    if (isCompleted) {
+      const index = props.user.completedPrompts.indexOf(props.promptId);
+      newUser.completedPrompts.splice(index, 1);
+      props.updateUser((prev) => (prev = newUser));
+    }
+    // if prompt is not completed, add to completedPrompts
+    else {
+      newUser.completedPrompts.push(props.promptId);
+      props.updateUser((prev) => (prev = newUser));
+    }
+
+    // make fetch request to update users completedPrompts in DB
+    try {
+      fetch(`http://localhost:8080/users/complete/${newUser.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          completedPrompts: props.user.completedPrompts,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data.message);
+        })
+        // update user in localStorage
+        .then(localStorage.setItem("user", JSON.stringify(props.user)))
+        // update isCompleted state
+        .then(setIsCompleted(!isCompleted));
+    } catch (err) {
+      // if fetch fails, alert user
+      console.log(err);
+      alert("Error updating. Please try again.");
+    }
   };
 
   return (

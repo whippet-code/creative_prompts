@@ -106,26 +106,22 @@ router.put("/save/:id", async (req, res) => {
 
 // edit user's completed promtps array by id
 router.put("/complete/:id", async (req, res) => {
-  // get users from db
-  const users = await getUsers();
+  console.log(`User ${req.params.id} requesting update to completed prompts.`);
 
   // find user by id
-  const user = users.find((u) => u._id === req.params.id);
+  const id = req.params.id;
+  const update = req.body;
+  const user = await User.findById(id);
   if (!user) return res.status(400).json({ message: "User not found." });
 
   // update user's completed prompts array
-  user.completedPrompts = req.body.completedPrompts;
+  user.completedPrompts = update;
 
   // save updated user to db
   await user.save();
 
-  // server confirmation
-  console.log(
-    `User ${user.username} completed prompt ${req.body.completedPrompts}`
-  );
-
   // confirm to client
-  res.json({ message: "User completed prompt." });
+  res.json({ message: "User completed prompts updated." });
 });
 
 module.exports = router;
