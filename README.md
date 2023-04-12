@@ -9,8 +9,7 @@ Build as stand alone app????? // how easy to convert to native???
 
 ### Build
 
-Fix / test save/comp routes / functions. ----- add / remove prompt completed in prompt document. (add / remove prompt from user document)
-need to think about how to handle the user document, only need user id, saved and completed prompt array. Can i do it in the saveNfav comp? Passing user data as promps is making updating the array tricky? how do props affect state? (need to look into this)
+Build completedPrompt update func - local, state & db fetch call. Use saved version as boilerplate.
 
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
@@ -31,7 +30,3 @@ Text color on "learn" prompts card, needs to be dark. (explore color variable.)
 
 use dovenv for api keys and other sensitive data
 Tidy components folder to user / admin folders??
-
-```
-
-```

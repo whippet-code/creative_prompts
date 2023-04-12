@@ -87,8 +87,7 @@ router.post("/register", async (req, res) => {
 
 // edit user's saved promtps array by id
 router.put("/save/:id", async (req, res) => {
-  console.log("save route hit");
-
+  console.log(`User ${req.params.id} requesting update to saved prompts.`);
   // find user by id (use mongoose method findById)
   const id = req.params.id;
   const update = req.body;
@@ -101,11 +100,8 @@ router.put("/save/:id", async (req, res) => {
   // save updated user to db
   await user.save();
 
-  // server confirmation
-  console.log(`User ${user.username} saved prompt ${req.body.savedPrompts}`);
-
   // confirm to client
-  res.json({ message: "User saved prompt." });
+  res.json({ message: "Users saved prompts updated." });
 });
 
 // edit user's completed promtps array by id
