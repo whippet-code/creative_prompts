@@ -15,8 +15,7 @@ const Prompt = (props) => {
   }, []);
 
   const updateUser = (user) => {
-    setUser((prevUser) => (prevUser = user));
-    // localStorage.setItem("user", JSON.stringify(user));
+    setUser(user);
   };
 
   const handleClose = () => {
@@ -64,7 +63,7 @@ const Prompt = (props) => {
           {user ? (
             <SaveNFav
               user={user}
-              setUser={updateUser}
+              updateUser={updateUser}
               promptId={props.prompt._id}
             />
           ) : (

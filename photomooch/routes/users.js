@@ -88,15 +88,15 @@ router.post("/register", async (req, res) => {
 // edit user's saved promtps array by id
 router.put("/save/:id", async (req, res) => {
   console.log("save route hit");
-  // get users from db
-  const users = await getUsers();
 
-  // find user by id
-  const user = users.find((u) => u._id === req.params.id);
-  if (!user) return res.status(400).send("User not found.");
+  // find user by id (use mongoose method findById)
+  const id = req.params.id;
+  const update = req.body;
+  const user = await User.findById(id);
+  if (!user) return res.status(400).json({ message: "User not found." });
 
   // update user's saved prompts array
-  user.savedPrompts = req.body.savedPrompts;
+  user.savedPrompts = update;
 
   // save updated user to db
   await user.save();
@@ -115,7 +115,7 @@ router.put("/complete/:id", async (req, res) => {
 
   // find user by id
   const user = users.find((u) => u._id === req.params.id);
-  if (!user) return res.status(400).send("User not found.");
+  if (!user) return res.status(400).json({ message: "User not found." });
 
   // update user's completed prompts array
   user.completedPrompts = req.body.completedPrompts;

@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 
-//props -user, setUser()  & prompt._id
+//props -user, updateUser()  & prompt._id
 const SaveNFav = (props) => {
   const [isSaved, setIsSaved] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
@@ -29,17 +29,19 @@ const SaveNFav = (props) => {
     if (isSaved) {
       const index = props.user.savedPrompts.indexOf(props.promptId);
       newUser.savedPrompts.splice(index, 1);
-      props.setUser((prev) => (prev = newUser));
+      props.updateUser((prev) => (prev = newUser));
     }
     // if prompt is not saved, add to savedPrompts
     else {
       newUser.savedPrompts.push(props.promptId);
-      props.setUser((prev) => (prev = newUser));
+      props.updateUser((prev) => (prev = newUser));
     }
+
+    console.log(props.user);
 
     // make fetch request to update users savedPrompts in DB
     try {
-      fetch(`http://localhost:8080/users/save/${props.user.id}`, {
+      fetch(`http://localhost:8080/users/save/${newUser.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -51,13 +53,16 @@ const SaveNFav = (props) => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data.message);
-        });
+        })
+        // update user in localStorage
+        .then(localStorage.setItem("user", JSON.stringify(props.user)))
+        // update isSaved state
+        .then(setIsSaved(!isSaved));
     } catch (err) {
+      // if fetch fails, alert user
       console.log(err);
       alert("Error updating. Please try again.");
     }
-    // update comp state
-    setIsSaved(!isSaved);
   };
 
   // FINISH AS ABOVE BUT TO USERS/COMPLETE/:ID

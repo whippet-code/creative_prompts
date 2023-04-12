@@ -14,6 +14,8 @@ need to think about how to handle the user document, only need user id, saved an
 
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
+** On load it appears as if user is logged in ?????? **
+
 \***\* On first load have the home page show a pop up explaining how to use the app, and what it is. \*\***
 **_Also need fallback for is server unavailable._**
 
