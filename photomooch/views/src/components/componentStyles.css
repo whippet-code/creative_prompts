@@ -424,8 +424,46 @@
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 @media (max-width: 600px) {
+  .PressForPrompt {
+    max-width: 90vw;
+  }
+
+  .Prompt {
+    max-width: 80vw;
+    max-height: 66vh;
+  }
+
+  .moochButton img {
+    max-width: 90vw;
+    max-height: 90vw;
+  }
+
   .form {
     width: 80vw;
+  }
+  * {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 400px) {
+  .PressForPrompt {
+    max-width: 90vw;
+  }
+
+  .Prompt {
+    max-width: 80vw;
+    max-height: 66vh;
+  }
+
+  .moochButton img {
+    max-width: 90vw;
+    max-height: 90vw;
+  }
+  .form {
+    width: 90vw;
+  }
+  * {
+    font-size: 0.7rem;
   }
 }
 

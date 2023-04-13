@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-/*  nav bar styling */
+/*  nav bar styling - sticky (top) */
 nav {
   background-color: transparent;
   font-family: "Anonymous Pro", monospace;
@@ -15,9 +15,9 @@ nav {
   font-style: normal;
   display: flex;
   justify-content: space-between;
-  align-items: top;
   padding: 0 2rem;
   height: 4rem;
+  width: 100vw;
 }
 
 .link {
