@@ -16,11 +16,11 @@ Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from j
 \***\* On first load have the home page show a pop up explaining how to use the app, and what it is. \*\***
 **_Also need fallback for is server unavailable._**
 
+STYLING - Mobile first. Home filter button too low. dahsboard cards too wide. prompt cards too wide. (need to use media queries to change the width of the cards)
+Sticky nav.
+
 #### Thursday Tasks
 
-complete save / comp calls
-fix db
-style saveNfav buttons
 Check log in detection on first load / make a first load pop up
 
 ## NOTES -

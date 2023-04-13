@@ -428,3 +428,18 @@
     width: 80vw;
   }
 }
+
+/* SaveNFav */
+.SaveNFav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.SaveNFav button {
+  width: 8rem;
+  border-radius: 0.25rem;
+  margin: 0.25rem;
+}

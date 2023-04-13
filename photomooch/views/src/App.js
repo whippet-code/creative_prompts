@@ -90,7 +90,12 @@ function App() {
         <Route path="/register" element={<Register navigate={navigate} />} />
         <Route
           path="/dashboard"
-          element={<UserDash prompts={prompts} user={user} />}
+          element={
+            <UserDash
+              prompts={prompts}
+              user={JSON.parse(localStorage.getItem("user"))}
+            />
+          }
         />
         <Route path="/admin" element={<AdminDash prompts={prompts} />} />
       </Routes>

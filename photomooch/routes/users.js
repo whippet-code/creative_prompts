@@ -95,7 +95,7 @@ router.put("/save/:id", async (req, res) => {
   if (!user) return res.status(400).json({ message: "User not found." });
 
   // update user's saved prompts array
-  user.savedPrompts = update;
+  user.savedPrompts = update.savedPrompts;
 
   // save updated user to db
   await user.save();
@@ -115,7 +115,7 @@ router.put("/complete/:id", async (req, res) => {
   if (!user) return res.status(400).json({ message: "User not found." });
 
   // update user's completed prompts array
-  user.completedPrompts = update;
+  user.completedPrompts = update.completedPrompts;
 
   // save updated user to db
   await user.save();

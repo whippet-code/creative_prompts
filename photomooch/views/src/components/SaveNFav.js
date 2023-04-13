@@ -108,21 +108,21 @@ const SaveNFav = (props) => {
   return (
     <div className="SaveNFav">
       {isSaved ? (
-        <Button variant="success" onClick={handleSave}>
+        <Button variant="primary" onClick={handleSave}>
           Saved
         </Button>
       ) : (
-        <Button variant="outline-success" onClick={handleSave}>
-          Save This
+        <Button variant="outline-light" onClick={handleSave}>
+          Save
         </Button>
       )}
       {isCompleted ? (
-        <Button variant="success" onClick={handleComplete}>
+        <Button variant="primary" onClick={handleComplete}>
           Completed
         </Button>
       ) : (
-        <Button variant="outline-success" onClick={handleComplete}>
-          I've done it
+        <Button variant="outline-light" onClick={handleComplete}>
+          Mark Done
         </Button>
       )}
     </div>
