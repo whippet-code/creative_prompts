@@ -9,14 +9,19 @@ Build as stand alone app????? // how easy to convert to native???
 
 ### Build
 
-Build completedPrompt update func - local, state & db fetch call. Use saved version as boilerplate.
-
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
 ** On load it appears as if user is logged in ?????? **
 
 \***\* On first load have the home page show a pop up explaining how to use the app, and what it is. \*\***
 **_Also need fallback for is server unavailable._**
+
+#### Thursday Tasks
+
+complete save / comp calls
+fix db
+style saveNfav buttons
+Check log in detection on first load / make a first load pop up
 
 ## NOTES -
 
