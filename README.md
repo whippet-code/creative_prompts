@@ -11,17 +11,10 @@ Build as stand alone app????? // how easy to convert to native???
 
 Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from just typing in the url
 
-** On load it appears as if user is logged in ?????? **
-
 \***\* On first load have the home page show a pop up explaining how to use the app, and what it is. \*\***
 **_Also need fallback for is server unavailable._**
 
-STYLING - Mobile first. Home filter button too low. dahsboard cards too wide. prompt cards too wide. (need to use media queries to change the width of the cards)
-Sticky nav.
-
 #### Thursday Tasks
-
-Check log in detection on first load / make a first load pop up
 
 ## NOTES -
 

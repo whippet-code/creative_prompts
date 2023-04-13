@@ -272,6 +272,7 @@
 }
 
 .dash-title-card {
+  max-width: 100%;
   width: 36rem;
   border: 2px solid #aaa;
   text-align: center;
@@ -329,6 +330,14 @@
 }
 
 /* admin / user prompt card comp */
+.allPrompts {
+  max-width: 100%;
+}
+
+.card {
+  max-width: 100%;
+}
+
 .admin-prompt {
   display: flex;
   flex-direction: column;
