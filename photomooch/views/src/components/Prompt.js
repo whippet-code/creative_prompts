@@ -50,12 +50,12 @@ const Prompt = (props) => {
       <div className="card-holder flip-card-inner">
         <div className={cardDivClass()}>
           <h1 className="card-title">{props.prompt.title}</h1>
-          <h2 className="card-category">{props.prompt.category}</h2>
           <img
             className="card-image"
             src={props.prompt.image}
             alt={props.prompt.title}
           />
+          <h2 className="card-category">{props.prompt.category}</h2>
         </div>
         <div className="flip-card-back">
           <h2 className="card-title">{props.prompt.title}</h2>
@@ -67,7 +67,7 @@ const Prompt = (props) => {
               promptId={props.prompt._id}
             />
           ) : (
-            ""
+            <h5>#photomooch</h5>
           )}
           <Button
             className="card-button"

@@ -25,6 +25,7 @@ const PromptHolder = (props) => {
   return (
     <div className="PromptHolder">
       <PressForPrompt prompts={props.prompts} filter={filter} />
+      <h5>#photomooch</h5>
       <Filter filter={filter} handleChange={handleChange} />
     </div>
   );

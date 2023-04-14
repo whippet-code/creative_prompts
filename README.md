@@ -28,3 +28,23 @@ Text color on "learn" prompts card, needs to be dark. (explore color variable.)
 
 use dovenv for api keys and other sensitive data
 Tidy components folder to user / admin folders??
+
+### JWT route protection
+
+previous code.
+
+app.get("/admin_resource", (req, res) => {
+const token = req.headers["authorization"].split(" ")[1];
+try {
+const decoded = jwt.verify(token, "jwt-secret");
+if (decoded.admin) {
+res.send({ msg: "Success! Admin access authorised." });
+} else {
+res
+.status(403)
+.send({ msg: "Your JWT was verified, but you are not an admin." });
+}
+} catch (err) {
+res.sendStatus(401);
+}
+});
