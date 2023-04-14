@@ -43,6 +43,7 @@ const SaveNFav = (props) => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          token: localStorage.getItem("token"),
         },
         body: JSON.stringify({
           savedPrompts: props.user.savedPrompts,
@@ -85,6 +86,7 @@ const SaveNFav = (props) => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          token: localStorage.getItem("token"),
         },
         body: JSON.stringify({
           completedPrompts: props.user.completedPrompts,

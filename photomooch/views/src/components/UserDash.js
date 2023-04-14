@@ -6,11 +6,16 @@
 import React from "react";
 
 import { Card } from "react-bootstrap";
+import { Navigate } from "react-router";
 
 import UserPrompt from "./UserPrompt";
 
 // passed full prompt list & userInfo as props
 function UserDash(props) {
+  if (!props.user) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <div className="dash">
       <Card className="dash-title-card">

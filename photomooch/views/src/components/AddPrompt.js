@@ -86,9 +86,6 @@ const AddPrompt = () => {
     //set newPrompt state to emptyState
     setNewPrompt((prev) => emptyPrompt);
     handleClose();
-
-    // refresh page to show updated prompt list
-    window.location.reload();
   };
 
   // use .map to loop through newPrompt obj and create form inputs (Object.entrie(emptyPrompt).map(([key, value]) => {.....}))

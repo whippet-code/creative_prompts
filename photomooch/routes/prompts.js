@@ -2,7 +2,13 @@ var express = require("express");
 var router = express.Router();
 
 const { Prompt } = require("../models/prompt");
-const { getPrompts, authAdmin } = require("../middlewear/middlewear");
+const { getPrompts, authAdmin, authUser } = require("../middlewear/middlewear");
+
+// Admin suth for /admin routes
+router.use("/admin", authAdmin);
+
+// User auth for /dashboard routes
+router.use("/dashboard", authUser);
 
 /* GET all prompts listing. */ // TEST TO ENSURE DB CONNECTION // call getPrompts() to get all prompts from db
 router.get("/", async (req, res) => {

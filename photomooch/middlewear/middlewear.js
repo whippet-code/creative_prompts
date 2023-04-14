@@ -16,6 +16,7 @@ function authAdmin(req, res, next) {
     if (decoded.isAdmin === false)
       return res.status(403).send("Access denied.");
     req.user = decoded;
+    console.log("Admin verified");
     next();
   });
 }
@@ -27,6 +28,7 @@ function authUser(req, res, next) {
   jwt.verify(token, "jwtPrivateKey", (err, decoded) => {
     if (err) return res.status(400).send("Invalid token.");
     req.user = decoded;
+    console.log("User verified");
     next();
   });
 }

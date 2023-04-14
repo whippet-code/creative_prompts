@@ -1,5 +1,5 @@
 // import required libs
-import { Link, Routes, Route, useNavigate } from "react-router-dom";
+import { Link, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 //import bootstrap & CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -77,6 +77,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<PromptHolder prompts={prompts} />} />
         <Route
+          exact
           path="/login"
           element={
             <Login
@@ -87,8 +88,13 @@ function App() {
             />
           }
         />
-        <Route path="/register" element={<Register navigate={navigate} />} />
         <Route
+          exact
+          path="/register"
+          element={<Register navigate={navigate} />}
+        />
+        <Route
+          exact
           path="/dashboard"
           element={
             <UserDash
@@ -97,7 +103,12 @@ function App() {
             />
           }
         />
-        <Route path="/admin" element={<AdminDash prompts={prompts} />} />
+        <Route
+          exact
+          path="/admin"
+          element={<AdminDash user={user} prompts={prompts} />}
+        />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );
