@@ -14,15 +14,13 @@ Enable JWT auth / isAdmin / loggedin etc in the backend to protect routes from j
 \***\* On first load have the home page show a pop up explaining how to use the app, and what it is. \*\***
 **_Also need fallback for is server unavailable._**
 
-#### Thursday Tasks
+Add user id to completedBy array in prompt documents.]
 
 ## NOTES -
 
-When adding prompts, the DB is updated but prompts array in state is not updated. Need to add a useEffect to update the prompts array in state when the DB is updated. this will need the promtp fetch moving to it's own func??
+When adding promnpt, push to so that it is the first item in the array, so that it is the first prompt shown to the user. in mongoDB.
 
 Also adding prompts tags is lazy/not implemented (just a string input), it need to be an array of strings.
-
-Text color on "learn" prompts card, needs to be dark. (explore color variable.)
 
 ### POST SUBMIT TODOS
 

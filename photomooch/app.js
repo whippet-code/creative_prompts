@@ -29,7 +29,6 @@ app.use("/users", usersRouter);
 app.use("/prompts", promptsRouter);
 
 // link mongodb using mongoose and use the photomooch database
-
 const start = async () => {
   try {
     await mongoose.connect(

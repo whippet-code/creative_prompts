@@ -5,9 +5,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const { User } = require("../models/user");
-const { validateUser } = require("../models/user");
 
-const { getUsers, auth, admin, loggedIn } = require("../middlewear/middlewear");
+const { getUsers, authUser, authAdmin } = require("../middlewear/middlewear");
 
 // log in route
 router.post("/login", async (req, res) => {
@@ -86,7 +85,7 @@ router.post("/register", async (req, res) => {
 });
 
 // edit user's saved promtps array by id
-router.put("/save/:id", async (req, res) => {
+router.put("/save/:id", authUser, async (req, res) => {
   console.log(`User ${req.params.id} requesting update to saved prompts.`);
   // find user by id (use mongoose method findById)
   const id = req.params.id;
@@ -105,7 +104,7 @@ router.put("/save/:id", async (req, res) => {
 });
 
 // edit user's completed promtps array by id
-router.put("/complete/:id", async (req, res) => {
+router.put("/complete/:id", authUser, async (req, res) => {
   console.log(`User ${req.params.id} requesting update to completed prompts.`);
 
   // find user by id
@@ -123,5 +122,9 @@ router.put("/complete/:id", async (req, res) => {
   // confirm to client
   res.json({ message: "User completed prompts updated." });
 });
+
+// admin route protection?
+
+//dashboard route auth
 
 module.exports = router;

@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 const { Prompt } = require("../models/prompt");
-const { getPrompts, admin, auth } = require("../middlewear/middlewear");
+const { getPrompts, authAdmin } = require("../middlewear/middlewear");
 
 /* GET all prompts listing. */ // TEST TO ENSURE DB CONNECTION // call getPrompts() to get all prompts from db
 router.get("/", async (req, res) => {
@@ -11,8 +11,7 @@ router.get("/", async (req, res) => {
 });
 
 // Add a prompt to the database via POST request and use req body JSON object
-// middlewear checks not implemented as yet. auth & admin
-router.post("/", async (req, res) => {
+router.post("/", authAdmin, async (req, res) => {
   // create new prompt // does  newPrompt = new Prompt({...req.body}) work?
   const newPrompt = new Prompt({
     title: req.body.title,
@@ -32,8 +31,7 @@ router.post("/", async (req, res) => {
 });
 
 // Update a prompt in the database via PUT request and use req body JSON object
-// middlewear checks not implemented as yet. auth & admin
-router.put("/:id", async (req, res) => {
+router.put("/:id", authAdmin, async (req, res) => {
   try {
     const id = req.params.id;
     const update = req.body;
@@ -47,8 +45,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a prompt from the database via DELETE request and prompt _id
-// middlewear checks not implemented as yet. auth & admin
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authAdmin, async (req, res) => {
   // using findByIdAndDelete() to delete prompt from db
   try {
     console.log(`Delete request for prompt with id: ${req.params.id}`);

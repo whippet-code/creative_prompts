@@ -20,9 +20,15 @@ function AdminPrompt(props) {
     try {
       fetch(`http://localhost:8080/prompts/${props.prompt._id}`, {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          token: localStorage.getItem("token"),
+        },
       })
         .then((res) => res.json())
         .then((data) => console.log(data.message));
+      // alert user of success via modal pop up
+      alert("Prompt deleted");
 
       // refresh page to show updated prompt list
       window.location.reload();

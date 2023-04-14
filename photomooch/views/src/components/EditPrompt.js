@@ -45,11 +45,17 @@ function EditPrompt(props) {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          token: localStorage.getItem("token"),
         },
         body: JSON.stringify(editPromptData),
       })
         .then((res) => res.json())
         .then((data) => console.log(data.message));
+
+      handleClose();
+
+      // refresh page to show updated prompt list
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }

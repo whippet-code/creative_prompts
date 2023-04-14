@@ -53,7 +53,7 @@ const AddPrompt = () => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        // token: ADD TOKEN HERE FROM LOCAL STORAGE WHEN auth & admin middlewear implemented
+        token: localStorage.getItem("token"),
       },
       body: JSON.stringify({
         title: newPrompt.title,
@@ -67,6 +67,8 @@ const AddPrompt = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.message);
+        // alert user of success
+        alert("New prompt added");
       })
       .catch((err) => {
         console.log(err);
@@ -84,6 +86,9 @@ const AddPrompt = () => {
     //set newPrompt state to emptyState
     setNewPrompt((prev) => emptyPrompt);
     handleClose();
+
+    // refresh page to show updated prompt list
+    window.location.reload();
   };
 
   // use .map to loop through newPrompt obj and create form inputs (Object.entrie(emptyPrompt).map(([key, value]) => {.....}))
