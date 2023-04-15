@@ -26,7 +26,7 @@ function authAdmin(req, res, next) {
 function authUser(req, res, next) {
   const token = req.header("token");
   if (!token) return res.status(401).send("Access denied. No token provided.");
-  jwt.verify(token, "jwtPrivateKey", (err, decoded) => {
+  jwt.verify(token, process.env.JWT_PASS, (err, decoded) => {
     if (err) return res.status(400).send("Invalid token.");
     req.user = decoded;
     console.log("User verified");
