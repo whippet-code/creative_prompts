@@ -4,6 +4,8 @@ var router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+require("dotenv").config();
+
 const { User } = require("../models/user");
 
 const { getUsers, authUser, authAdmin } = require("../middlewear/middlewear");
@@ -32,7 +34,7 @@ router.post("/login", async (req, res) => {
       completedPrompts: user.completedPrompts,
       savedPrompts: user.savedPrompts,
     },
-    "jwtPrivateKey",
+    process.env.JWT_PASS,
     { expiresIn: "12h" }
   );
 

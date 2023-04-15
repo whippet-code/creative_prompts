@@ -14,6 +14,8 @@ Build as stand alone app????? // how easy to convert to native???
 
 Add user id to completedBy array in prompt documents.
 
+Don't show completeed prompts to logged in users.
+
 Odd user handling when manually refreshing page as admin, treats as User not admin??
 
 ## NOTES -

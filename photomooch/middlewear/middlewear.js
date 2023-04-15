@@ -1,4 +1,5 @@
 // helper functions and custom middlewear
+require("dotenv").config();
 
 //import models
 const { User } = require("../models/user");
@@ -11,7 +12,7 @@ const jwt = require("jsonwebtoken");
 function authAdmin(req, res, next) {
   const token = req.header("token");
   if (!token) return res.status(401).send("Access denied. No token provided.");
-  jwt.verify(token, "jwtPrivateKey", (err, decoded) => {
+  jwt.verify(token, process.env.JWT_PASS, (err, decoded) => {
     if (err) return res.status(400).send("Invalid token.");
     if (decoded.isAdmin === false)
       return res.status(403).send("Access denied.");
@@ -32,18 +33,6 @@ function authUser(req, res, next) {
     next();
   });
 }
-
-// // func to check if user is admin or not
-// function admin(req, res, next) {
-//   if (!req.user.isAdmin) return res.status(403).send("Access denied.");
-//   next();
-// }
-
-// // func to check if user is logged in or not
-// function loggedIn(req, res, next) {
-//   if (!req.user) return res.status(403).send("Access denied.");
-//   next();
-// }
 
 // func to get all users from db
 async function getUsers() {

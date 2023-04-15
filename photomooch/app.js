@@ -2,6 +2,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+require("dotenv").config();
 
 // set up cors for cross origin requests
 var cors = require("cors");
@@ -31,9 +32,7 @@ app.use("/prompts", promptsRouter);
 // link mongodb using mongoose and use the photomooch database
 const start = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://mark:Password@hyperiondevtask.qkcy9dp.mongodb.net/photomooch?retryWrites=true&w=majority"
-    );
+    await mongoose.connect(process.env.DB_HOST);
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
