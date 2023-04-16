@@ -8,7 +8,7 @@ This app follows photomooch's aim to provide little creative prompts to spur use
 Users can get prompts without an account, however signed in users can save and mark prompts as complete.
 Further to this workshop leaders have the option to set up accounts to allow them to add, edit and remove prompts from the database to suit their participants.
 
-Live @ photomooch.onrender.com
+Live @ <a href="photomooch.onrender.com">PhotoMooch</a>
 
 <p align="center">
   <img src="PM_screenshot.png">
