@@ -1,10 +1,12 @@
-.container {
-    width: 100%;
-    max-width: 100%;
+html {
+    background-color: black;
+}
+#container {
+    text-align: center;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
-    background-color: black;
     color: blanchedalmond;
     font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
 }
