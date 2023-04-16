@@ -10,6 +10,10 @@ Further to this workshop leaders have the option to set up accounts to allow the
 
 Live @ photomooch.onrender.com
 
+<p align="center">
+  <img src="PM_screenshot.png">
+</p>
+
 ### Build
 // BUILD NOTES 
 
