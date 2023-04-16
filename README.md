@@ -16,11 +16,11 @@ Add user id to completedBy array in prompt documents.
 
 Don't show completeed prompts to logged in users.
 
-Odd user handling when manually refreshing page as admin, treats as User not admin??
+Odd user handling when manually refreshing page as admin, treats as User not admin?? Also after deleting prompt. (window.refresh?)
 
 ## NOTES -
 
-When adding promnpt, push to so that it is the first item in the array, so that it is the first prompt shown to the user. in mongoDB.
+When adding prompt, push to so that it is the first item in the array, so that it is the first prompt shown to the user. in mongoDB.
 
 Also adding prompts tags is lazy/not implemented (just a string input), it need to be an array of strings.
 
