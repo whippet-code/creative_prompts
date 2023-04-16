@@ -44,7 +44,7 @@ function Register(props) {
     }
     // make fetch call to server to register user
     try {
-      fetch("http://localhost:8080/users/register", {
+      fetch("https://photo-mooch-api.onrender.com/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

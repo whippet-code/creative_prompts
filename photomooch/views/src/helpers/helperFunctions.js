@@ -1,7 +1,8 @@
 // jwt verify function to return user info
 
 const jwt = require("jsonwebtoken");
-const secret = "jwtPrivateKey";
+require("dotenv").config();
+const secret = process.env.JWT_PASS;
 
 // get token from local storage
 const token = localStorage.getItem("token");

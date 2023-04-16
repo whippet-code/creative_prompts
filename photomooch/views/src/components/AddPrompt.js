@@ -49,7 +49,7 @@ const AddPrompt = () => {
     }
 
     //make fetch call to server to add new prompt
-    fetch("http://localhost:8080/prompts", {
+    fetch("https://photo-mooch-api.onrender.com/prompts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

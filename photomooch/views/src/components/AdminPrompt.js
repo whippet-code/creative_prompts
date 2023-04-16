@@ -18,13 +18,16 @@ function AdminPrompt(props) {
   // fetch call to server to delete prompt from db using id
   const handleDelete = () => {
     try {
-      fetch(`http://localhost:8080/prompts/${props.prompt._id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          token: localStorage.getItem("token"),
-        },
-      })
+      fetch(
+        `https://photo-mooch-api.onrender.com/prompts/${props.prompt._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            token: localStorage.getItem("token"),
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => console.log(data.message));
       // alert user of success via modal pop up

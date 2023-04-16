@@ -41,14 +41,17 @@ function EditPrompt(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      fetch(`http://localhost:8080/prompts/${props.prompt._id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          token: localStorage.getItem("token"),
-        },
-        body: JSON.stringify(editPromptData),
-      })
+      fetch(
+        `https://photo-mooch-api.onrender.com/prompts/${props.prompt._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            token: localStorage.getItem("token"),
+          },
+          body: JSON.stringify(editPromptData),
+        }
+      )
         .then((res) => res.json())
         .then((data) => console.log(data.message));
 

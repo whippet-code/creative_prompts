@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PhotoMooch App",
+  "name": "PhotoMooch Creative Prompts",
   "icons": [],
   "start_url": ".",
   "display": "standalone",

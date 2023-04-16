@@ -27,9 +27,8 @@ function App() {
   };
 
   const navigate = useNavigate();
-
   useEffect(() => {
-    fetch("http://localhost:8080/prompts")
+    fetch("https://photo-mooch-api.onrender.com/prompts")
       .then((res) => res.json())
       .then((data) => setPrompts(data));
   }, []);

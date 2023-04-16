@@ -31,7 +31,7 @@ function Login(props) {
 
     // take logInData and send to server
     try {
-      fetch("http://localhost:8080/users/login", {
+      fetch("https://photo-mooch-api.onrender.com/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

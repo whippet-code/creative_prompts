@@ -39,7 +39,7 @@ const SaveNFav = (props) => {
 
     // make fetch request to update users savedPrompts in DB
     try {
-      fetch(`http://localhost:8080/users/save/${newUser.id}`, {
+      fetch(`https://photo-mooch-api.onrender.com/users/save/${newUser.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -82,16 +82,19 @@ const SaveNFav = (props) => {
 
     // make fetch request to update users completedPrompts in DB
     try {
-      fetch(`http://localhost:8080/users/complete/${newUser.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          token: localStorage.getItem("token"),
-        },
-        body: JSON.stringify({
-          completedPrompts: props.user.completedPrompts,
-        }),
-      })
+      fetch(
+        `https://photo-mooch-api.onrender.com/users/complete/${newUser.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            token: localStorage.getItem("token"),
+          },
+          body: JSON.stringify({
+            completedPrompts: props.user.completedPrompts,
+          }),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data.message);
