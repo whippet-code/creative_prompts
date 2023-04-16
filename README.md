@@ -1,4 +1,4 @@
-# creative_prompts
+# PhotoMooch
 
 ## Web app Photo Mooch - Creative prompts for photographers
 
