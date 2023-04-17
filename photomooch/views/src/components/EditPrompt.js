@@ -56,9 +56,6 @@ function EditPrompt(props) {
         .then((data) => console.log(data.message));
 
       handleClose();
-
-      // refresh page to show updated prompt list
-      window.location.reload();
     } catch (err) {
       console.log(err);
     }

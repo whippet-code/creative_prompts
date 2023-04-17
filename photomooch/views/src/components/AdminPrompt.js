@@ -34,7 +34,6 @@ function AdminPrompt(props) {
       alert("Prompt deleted");
 
       // refresh page to show updated prompt list
-      window.location.reload();
     } catch (error) {
       console.log(error.message);
     }
