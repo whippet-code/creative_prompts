@@ -32,15 +32,15 @@ function AdminPrompt(props) {
         .then((data) => console.log(data.message));
       // alert user of success via modal pop up
       alert("Prompt deleted");
-
-      // refresh page to show updated prompt list
+      // update prompts styling to hide from view
+      document.getElementById(props.prompt._id).style.display = "none";
     } catch (error) {
       console.log(error.message);
     }
   };
 
   return (
-    <div className="admin-prompt">
+    <div className="admin-prompt" id={props.prompt._id}>
       <Card style={{ width: "36rem" }}>
         <Card.Body>
           <Card.Img variant="top" src={props.prompt.image} />
