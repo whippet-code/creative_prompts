@@ -126,17 +126,15 @@ const AddPrompt = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {/* Needs to be a selection dropdown */}
             <Form.Group className="mb-3" controlId="ControlCategory">
-              <Form.Label>Category</Form.Label>
-              <Form.Control
-                name="category"
-                type="text"
-                placeholder={
-                  newPrompt.category === "" ? "" : newPrompt.category
-                }
-                onChange={handleChange}
-              />
+              <Form.Label>Category Select</Form.Label>
+              <Form.Select name="category" onChange={handleChange}>
+                <option>Explore</option>
+                <option>Learn</option>
+                <option>Connect</option>
+                <option>Take Notice</option>
+                <option>Give</option>
+              </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3" controlId="ControlAuthor">
               <Form.Label>Author</Form.Label>
