@@ -125,8 +125,4 @@ router.put("/complete/:id", authUser, async (req, res) => {
   res.json({ message: "User completed prompts updated." });
 });
 
-// admin route protection?
-
-//dashboard route auth
-
 module.exports = router;
