@@ -37,6 +37,18 @@ function Register(props) {
       alert("Please complete all fields");
       return;
     }
+
+    // confirm strong password using regex - over 8 chars, 1 uppercase, 1 lowercase, 1 number
+    const strongPassword = new RegExp(
+      "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})"
+    );
+    if (!strongPassword.test(logInData.password)) {
+      alert(
+        "Password must be at least 8 characters long and contain at least 1 uppercase letter, 1 lowercase letter, and 1 number."
+      );
+      return;
+    }
+
     // confirm passwords match
     if (logInData.password !== logInData.passwordConfirm) {
       alert("Passwords do not match");
