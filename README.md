@@ -15,16 +15,22 @@ Live @ <a href="https://photomooch.onrender.com">PhotoMooch</a>
 </p>
 
 ### Build
-// BUILD NOTES 
+
+// BUILD NOTES
 
 Created with a React.js frontend.
 Express.js server using mongoose to link to a MongoDB as backend.
 Deployed via render.
 
+### Current build notes
+
+Implementing a new prompt generation system utilising OpenAI's GPT-4 API. This will allow for more natural language prompts to be generated, and will allow for more complex prompts to be generated. The AI will be trained on the current prompt database, and will be able to generate prompts based upon which of the five pillars of wellbeing the user wishes to focus on.
+
+Test build is complete, and is currently being tested. Once testing is complete, the new system will be implemented into the main build. This will operate as a seperate system to the current prompt generation system, and will be able to be toggled on and off by the user.
 
 ##### Current bug / fix list
 
-*** On first load have the home page show a pop up explaining how to use the app, and what it is. ***
+**_ On first load have the home page show a pop up explaining how to use the app, and what it is. _**
 **_Also need fallback for if server unavailable._**
 
 Add user id to completedBy array in prompt documents.
