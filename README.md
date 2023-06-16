@@ -32,6 +32,7 @@ Test build is complete, and is currently being tested. Once testing is complete,
 
 **_ On first load have the home page show a pop up explaining how to use the app, and what it is. _**
 **_Also need fallback for if server unavailable._**
+Fallback for db server error will be to switch to ai generated prompts.
 
 Add user id to completedBy array in prompt documents.
 
