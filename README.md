@@ -40,6 +40,8 @@ Don't show completed prompts to logged in users.
 
 Odd user handling when manually refreshing page as admin, treats as User not admin?? Also after deleting prompt. (window.refresh?)
 
+404 upon admin updating a prompt? - api logs show no error, but the response is a 404. Need to check front end behaviour.
+
 #### Future Feature / Add-ons
 
 Later progression - Artistic medium based usage (visual prompt, writing prompt, etc)
