@@ -28,6 +28,8 @@ Implementing a new prompt generation system utilising OpenAI's GPT-4 API. This w
 
 Test build is complete, and is currently being tested. Once testing is complete, the new system will be implemented into the main build. This will operate as a seperate system to the current prompt generation system, and will be able to be toggled on and off by the user.
 
+Lots of work arounds / prop drilling in the current build, casing a few niggly bugs. Refactoring to use either context / redux / zustand.
+
 ##### Current bug / fix list
 
 **_ On first load have the home page show a pop up explaining how to use the app, and what it is. _**
