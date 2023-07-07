@@ -1,7 +1,7 @@
 // import required libs
 import { Link, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
-// need to keep track of global state of promts using zustand
+// need to keep track of global state of promts using zustand // redux
 
 //import bootstrap & CSS
 import "bootstrap/dist/css/bootstrap.min.css";
